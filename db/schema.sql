@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS whiskers_db;
+CREATE DATABASE whiskers_db;
