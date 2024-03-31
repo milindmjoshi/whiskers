@@ -1,8 +1,29 @@
 const router = require('express').Router();
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auth');
+const path = require('path');
 
 //TODO: - Update to Whisky ROUTES //
+
+router.get('/:name',  (req,res) => {
+    //TODO - Add auth
+    let whisky = req.params.name;
+    switch(whisky) {
+      case 'chivas-12': 
+            res.sendFile(path.join(__dirname, '../../public/assets/images/chivas-regal-12.jpg'));
+            break;
+      case 'chivas-18':
+            res.sendFile(path.join(__dirname,'../../public/assets/images/chivas-regal-18.jpg'));
+            break;
+      case  'chivas-25':
+            res.sendFile(path.join(__dirname,'../../public/assets/images/chivas-regal-25.jpg'));
+            break;
+      default:
+            console.log("Whisky not found:" + whisky);
+            res.status(404).send('Whisky Not Found: ' + whisky);     
+    }
+
+})
 
 router.post('/', withAuth, async (req, res) => {
   try {

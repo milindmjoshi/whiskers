@@ -1,4 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
+const User = require('./User');
+const Whisky = require('./Whisky');
 const sequelize = require('../config/connection');
 // TODO: Update everything for Whisky
 class Rating extends Model { }
@@ -38,6 +40,14 @@ Rating.init({
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW
     }
-});
+},
+{
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'rating',
+  }
+);
 
 module.exports = Rating;
