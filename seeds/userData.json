@@ -1,17 +1,102 @@
 [
   {
-    "name": "Sal",
-    "email": "sal@hotmail.com",
-    "password": "password12345"
+    "name": "Alex Johnson",
+    "email": "alex.johnson@example.com",
+    "password": "password123"
   },
   {
-    "name": "Lernantino",
-    "email": "lernantino@gmail.com",
-    "password": "password12345"
+    "name": "Bethany Hughes",
+    "email": "bethany.hughes@example.com",
+    "password": "password123"
   },
   {
-    "name": "Amiko",
-    "email": "amiko2k20@aol.com",
-    "password": "password12345"
+    "name": "Charlie Smith",
+    "email": "charlie.smith@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Danielle Adams",
+    "email": "danielle.adams@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Ethan Wright",
+    "email": "ethan.wright@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Fiona Clark",
+    "email": "fiona.clark@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "George Davis",
+    "email": "george.davis@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Hannah Brown",
+    "email": "hannah.brown@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Ian Edwards",
+    "email": "ian.edwards@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Julia Martinez",
+    "email": "julia.martinez@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Kevin Lee",
+    "email": "kevin.lee@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Laura White",
+    "email": "laura.white@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Mike Young",
+    "email": "mike.young@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Nina Carter",
+    "email": "nina.carter@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Oscar King",
+    "email": "oscar.king@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Paige Wilson",
+    "email": "paige.wilson@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Quinn Thomas",
+    "email": "quinn.thomas@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Ryan Scott",
+    "email": "ryan.scott@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Sophie Moore",
+    "email": "sophie.moore@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Tyler Jackson",
+    "email": "tyler.jackson@example.com",
+    "password": "password123"
   }
 ]
