@@ -1,39 +1,37 @@
-//Seed that base boys
+const fs = require('fs');
+const path = require('path');
 const sequelize = require('../config/connection');
-const { User, Whiskey, Rating } = require('../models');
-
-const userData = [
-  { username: 'john_doe' },
-  { username: 'jane_smith' },
-  { username: 'alex_williams' },
-];
-
-const whiskeyData = [
-  { name: 'Macallan 18', type: 'Scotch', origin: 'Scotland' },
-  { name: 'Buffalo Trace', type: 'Bourbon', origin: 'USA' },
-  { name: 'Jameson', type: 'Irish', origin: 'Ireland' },
-];
-
-const ratingData = [
-  { rating: 5 },
-  { rating: 4 },
-  { rating: 3 },
-];
+const { User, Whiskey, Rating, Admin } = require('../models');
 
 const seedDatabase = async () => {
   try {
+    // Read data from JSON files
+    const userData = JSON.parse(fs.readFileSync(path.join(__dirname, 'userData.json'), 'utf-8'));
+    const whiskeyData = JSON.parse(fs.readFileSync(path.join(__dirname, 'whiskydata.json'), 'utf-8'));
+    const ratingData = JSON.parse(fs.readFileSync(path.join(__dirname, 'ratingData.json'), 'utf-8'));
+    const adminData = JSON.parse(fs.readFileSync(path.join(__dirname, 'adminData.json'), 'utf-8'));
+
+    // N-Sync database
     await sequelize.sync({ force: true });
 
+    // Seed users
     const users = await User.bulkCreate(userData, {
       individualHooks: true,
       returning: true,
     });
 
+    // Seed whiskeys
     const whiskeys = await Whiskey.bulkCreate(whiskeyData, {
       returning: true,
     });
 
+    // Seed ratings
     const ratings = await Rating.bulkCreate(ratingData, {
+      returning: true,
+    });
+
+    // Seed admins
+    const admins = await Admin.bulkCreate(adminData, {
       returning: true,
     });
 
@@ -52,4 +50,3 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
-
