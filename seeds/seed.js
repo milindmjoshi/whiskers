@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const sequelize = require('../config/connection');
-const { User, Whiskey, Rating, Admin } = require('../models');
+const { User, Whisky, Rating, Admin } = require('../models');
 
 const seedDatabase = async () => {
   try {
