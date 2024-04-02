@@ -1,7 +1,7 @@
 :root {
     --primary-color: #ffffff;
     /* White */
-    --secondary-color: #959595;
+    --secondary-color: #aaaaaa;
     /* Light Grey */
 }
 
@@ -16,11 +16,21 @@ body {
     background-attachment: fixed;
 }
 
+.navbar-brand {
+    font-family: "Oswald", sans-serif;
+}
 
+.nav-link {
+    font-family: "Average", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 2em;
+}
 
 /* <weight>: Use a value from 200 to 700  */
 
-.above-title {
+.above-title,
+.above-form {
     height: 20em;
 }
 
@@ -41,11 +51,55 @@ body {
     font-style: normal;
 }
 
-.share-text {
+.share-text,
+.login-title,
+.signup-title,
+.admin-title {
     display: flex;
     justify-content: center;
     font-family: "Oswald", sans-serif;
     font-weight: 400;
-    font-size: 4em;
+    font-size: 5em;
     color: var(--secondary-color);
+}
+
+.login-container,
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-title,
+.signup-title {
+    letter-spacing: .1em;
+}
+
+.login-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.email-field,
+.password-field,
+.name-field {
+    margin: 1em;
+
+}
+
+input[type="text"],
+input[type="password"] {
+    font-family: "Oswald", sans-serif;
+    letter-spacing: .1em;
+    text-align: center;
+    font-size: 2em;
+}
+
+.form-input {
+    width: 20em;
+    height: 2em;
 }
