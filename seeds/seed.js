@@ -4,43 +4,51 @@ const path = require('path');
 const sequelize = require('../config/connection');
 const { User, Whisky, Rating, Admin } = require('../models');
 
+const userData = require('./userData.json');
+const whiskyData = require('./whiskyData.json');
+const ratingData = require('./ratingData.json');
+const adminData = require('./adminData.json');
+
+
 const seedDatabase = async () => {
   try {
     // Read data from JSON files
-    const userData = JSON.parse(fs.readFileSync(path.join(__dirname, 'userData.json'), 'utf-8'));
-    const whiskeyData = JSON.parse(fs.readFileSync(path.join(__dirname, 'whiskydata.json'), 'utf-8'));
-    const ratingData = JSON.parse(fs.readFileSync(path.join(__dirname, 'ratingData.json'), 'utf-8'));
-    const adminData = JSON.parse(fs.readFileSync(path.join(__dirname, 'adminData.json'), 'utf-8'));
+    // const userData = JSON.parse(fs.readFileSync(path.join(__dirname, 'userData.json'), 'utf-8'));
+    // const whiskeyData = JSON.parse(fs.readFileSync(path.join(__dirname, 'whiskydata.json'), 'utf-8'));
+    // const ratingsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'ratingsData.json'), 'utf-8'));
+    // const adminData = JSON.parse(fs.readFileSync(path.join(__dirname, 'adminData.json'), 'utf-8'));
+
 
     // N-Sync database
     await sequelize.sync({ force: true });
 
-    // Seed users
-    const users = await User.bulkCreate(userData, {
+
+    await Admin.bulkCreate(adminData, {
       individualHooks: true,
       returning: true,
     });
 
-    // Seed whiskeys
-    const whiskeys = await Whiskey.bulkCreate(whiskeyData, {
+    // Seed users
+    await User.bulkCreate(userData, {
+      individualHooks: true,
       returning: true,
     });
 
-    // Seed ratings
-    const ratings = await Rating.bulkCreate(ratingData, {
+    // // Seed whiskeys
+    await Whisky.bulkCreate(whiskyData, {
+      individualHooks: true,
       returning: true,
     });
 
-    // Seed admins
-    const admins = await Admin.bulkCreate(adminData, {
+    // // Seed ratings
+    await Rating.bulkCreate(ratingData, {
+      individualHooks: true,
       returning: true,
     });
 
-    // Associate ratings with users and whiskeys
-    for (let i = 0; i < users.length; i++) {
-      await ratings[i].setUser(users[i]);
-      await ratings[i].setWhiskey(whiskeys[i]);
-    }
+
+
+
 
     console.log('Database seeded successfully');
     process.exit(0);
@@ -51,4 +59,4 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
- 
+

@@ -1,6 +1,7 @@
 const User = require('./User');
 const Whisky = require('./Whisky');
 const Rating = require('./Rating');
+const Admin = require('./Admin'); 
 
 User.hasMany(Rating, {
   foreignKey: 'userId',
@@ -21,4 +22,14 @@ Rating.belongsTo(Whisky, {
   foreignKey: 'whiskyId' 
 });
 
-module.exports = { User, Whisky, Rating };
+// Admin to Whisky association
+Admin.hasMany(Whisky, {
+  foreignKey: 'adminId', 
+  onDelete: 'CASCADE',
+});
+
+Whisky.belongsTo(Admin, {
+  foreignKey: 'adminId', 
+});
+
+module.exports = { User, Whisky, Rating, Admin };
