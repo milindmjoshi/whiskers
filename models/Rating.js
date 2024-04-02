@@ -5,49 +5,52 @@ const sequelize = require('../config/connection');
 // TODO: Update everything for Whisky
 class Rating extends Model { }
 
-Rating.init({
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
-    userId: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: User,
-            key: 'id'
+Rating.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: User,
+                key: 'id'
+            }
+        },
+        whiskyId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: Whisky,
+                key: 'id'
+            }
+        },
+        rating: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                min: 1,
+                max: 5
+            }
+        },
+        comment: {
+            type: DataTypes.TEXT,
+            allowedNull: false,
+        },
+        commentDate: {
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW
         }
     },
-    whiskyId: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: Whisky,
-            key: 'id'
-        }
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'rating',
     },
-    rating: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
-            min: 1,
-            max: 5
-        }
-    },
-    text: {
-        type: DataTypes.TEXT
-    },
-    commentDate: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW
-    }
-},
-{
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'rating',
-  }
+
 );
 
 module.exports = Rating;

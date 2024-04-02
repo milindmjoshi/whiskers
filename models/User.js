@@ -35,15 +35,30 @@ User.init(
         len: [8],
       },
     },
+    security_question: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    security_answer: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      // Ensure the security answer is stored in lowercase
+      set(value) {
+        this.setDataValue('security_answer', value.toLowerCase());
+      }
+    },
   },
   {
+
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        newUserData.security_answer = newUserData.security_answer.toLowerCase();
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.security_answer = updatedUserData.security_answer.toLowerCase();
         return updatedUserData;
       },
     },
@@ -53,6 +68,7 @@ User.init(
     underscored: true,
     modelName: 'user',
   }
+
 );
 
 module.exports = User;
