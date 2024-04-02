@@ -1,6 +1,18 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
+/*
+POST http://localhost:3001/api/users
+ Sample POST body for creating a user, you can use insomnia to create this
+ {
+    "name" : "John Kennedy",
+    "email": "john@gmail.com",
+    "password":"password"
+ }
+
+
+*/
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -16,6 +28,16 @@ router.post('/', async (req, res) => {
   }
 });
 
+/*
+POST http://localhost:3001/api/users/login
+ Sample POST body for logging in a user, you can use insomnia to test
+ {
+    "email": "john@gmail.com",
+    "password":"password"
+ }
+
+
+*/
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -47,7 +69,16 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+/*
+POST http://localhost:3001/api/users/logout
+ Sample POST body for logging out a user, you can use insomnia to test
+ {
+    "email": "john@gmail.com",
+    "password":"password"
+ }
 
+
+*/
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
