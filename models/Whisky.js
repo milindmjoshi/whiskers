@@ -18,10 +18,6 @@ Whisky.init(
     description: {
       type: DataTypes.TEXT,
     },
-    averageRating: {
-      type: DataTypes.ENUM,
-      values: ['1', '2', '3', '4', '5']
-    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
