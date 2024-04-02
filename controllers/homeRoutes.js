@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
   }
 });
 
-module.exports = router;
 
 router.get('/project/:id', async (req, res) => {
   try {
@@ -66,6 +65,19 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+ 
+
+  res.render('signup');
+});
+
+
+router.get('/admin', (req, res) => {
+ 
+
+  res.render('admin');
 });
 
 module.exports = router;
