@@ -1,24 +1,52 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+:root {
+    --primary-color: #ffffff;
+    /* White */
+    --secondary-color: #959595;
+    /* Light Grey */
 }
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
+
+
+body {
+    background-image: url('../assets/images/Wood.jpeg');
+    background-size: cover;
+    /* Cover the entire page */
+    /* background-position: center; Center the background image */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
+
+
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 200 to 700 */
+
+.above-title {
+    height: 20em;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+.title-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whiskers-title {
+    display: flex;
+    justify-content: center;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 10em;
+    font-style: normal;
+}
+
+.share-text {
+    display: flex;
+    justify-content: center;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size: 4em;
+    color: var(--secondary-color);
 }
