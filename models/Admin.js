@@ -1,7 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-// Assuming User model is already defined and imported if needed
+
 
 class Admin extends Model {
     // You can add admin-specific methods here
@@ -65,7 +66,7 @@ Admin.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'admin',
     }
 
 );

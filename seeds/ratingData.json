@@ -3,140 +3,141 @@
         "userId": 1,
         "whiskyId": 1,
         "rating": 4,
-        "text": "A timeless classic. Always a go-to for a smooth experience.",
+        "comment": "A timeless classic. Always a go-to for a smooth experience.",
         "commentDate": "2023-04-21T00:00:00.000Z"
     },
     {
         "userId": 2,
         "whiskyId": 2,
         "rating": 5,
-        "text": "Jameson never disappoints. Perfect balance and smooth finish.",
+        "comment": "Jameson never disappoints. Perfect balance and smooth finish.",
         "commentDate": "2023-04-22T00:00:00.000Z"
     },
     {
         "userId": 3,
         "whiskyId": 3,
         "rating": 3,
-        "text": "Johnnie Walker is reliable, but looking for more complexity.",
+        "comment": "Johnnie Walker is reliable, but looking for more complexity.",
         "commentDate": "2023-04-23T00:00:00.000Z"
     },
     {
         "userId": 4,
         "whiskyId": 4,
         "rating": 5,
-        "text": "Maker's Mark has a distinct flavor that's hard to beat.",
+        "comment": "Maker's Mark has a distinct flavor that's hard to beat.",
         "commentDate": "2023-04-24T00:00:00.000Z"
     },
     {
         "userId": 5,
         "whiskyId": 5,
         "rating": 4,
-        "text": "Glenfiddich's awards are well deserved. Fantastic single malt.",
+        "comment": "Glenfiddich's awards are well deserved. Fantastic single malt.",
         "commentDate": "2023-04-25T00:00:00.000Z"
     },
     {
         "userId": 6,
         "whiskyId": 6,
         "rating": 5,
-        "text": "Lagavulin's peaty smoke is unparalleled. A true masterpiece.",
+        "comment": "Lagavulin's peaty smoke is unparalleled. A true masterpiece.",
         "commentDate": "2023-04-26T00:00:00.000Z"
     },
     {
         "userId": 7,
         "whiskyId": 7,
         "rating": 3,
-        "text": "Bushmills offers a smooth, gentle sip. Nice but not exceptional.",
+        "comment": "Bushmills offers a smooth, gentle sip. Nice but not exceptional.",
         "commentDate": "2023-04-27T00:00:00.000Z"
     },
     {
         "userId": 8,
         "whiskyId": 8,
         "rating": 4,
-        "text": "Wild Turkey's rich flavors shine through. Very enjoyable bourbon.",
+        "comment": "Wild Turkey's rich flavors shine through. Very enjoyable bourbon.",
         "commentDate": "2023-04-28T00:00:00.000Z"
     },
     {
         "userId": 9,
         "whiskyId": 9,
         "rating": 5,
-        "text": "Balvenie's craftsmanship is evident in every sip. Exceptional.",
+        "comment": "Balvenie's craftsmanship is evident in every sip. Exceptional.",
         "commentDate": "2023-04-29T00:00:00.000Z"
     },
     {
         "userId": 10,
         "whiskyId": 10,
         "rating": 4,
-        "text": "Ardbeg's balance of smoke and complexity is just right.",
+        "comment": "Ardbeg's balance of smoke and complexity is just right.",
         "commentDate": "2023-04-30T00:00:00.000Z"
     },
     {
         "userId": 11,
         "whiskyId": 11,
         "rating": 5,
-        "text": "Laphroaig's rich peatiness makes it a favorite for cold nights.",
+        "comment": "Laphroaig's rich peatiness makes it a favorite for cold nights.",
         "commentDate": "2023-05-01T00:00:00.000Z"
     },
     {
         "userId": 12,
         "whiskyId": 12,
         "rating": 4,
-        "text": "Talisker brings a wave of sea salt and smoke. A unique profile.",
+        "comment": "Talisker brings a wave of sea salt and smoke. A unique profile.",
         "commentDate": "2023-05-02T00:00:00.000Z"
     },
     {
         "userId": 13,
         "whiskyId": 13,
         "rating": 4,
-        "text": "Chivas Regal's blend is smooth and versatile, great for any occasion.",
+        "comment": "Chivas Regal's blend is smooth and versatile, great for any occasion.",
         "commentDate": "2023-05-03T00:00:00.000Z"
     },
     {
         "userId": 14,
         "whiskyId": 14,
         "rating": 5,
-        "text": "Glenlivet sets the standard for Speyside whiskies. Simply exquisite.",
+        "comment": "Glenlivet sets the standard for Speyside whiskies. Simply exquisite.",
         "commentDate": "2023-05-04T00:00:00.000Z"
     },
     {
         "userId": 15,
         "whiskyId": 15,
         "rating": 4,
-        "text": "Four Roses offers a floral aroma that's as captivating as its taste.",
+        "comment": "Four Roses offers a floral aroma that's as captivating as its taste.",
         "commentDate": "2023-05-05T00:00:00.000Z"
     },
     {
         "userId": 16,
         "whiskyId": 16,
         "rating": 4,
-        "text": "Bulleit's spicy undertones add a bold kick to its smoothness.",
+        "comment": "Bulleit's spicy undertones add a bold kick to its smoothness.",
         "commentDate": "2023-05-06T00:00:00.000Z"
     },
     {
         "userId": 17,
         "whiskyId": 17,
         "rating": 5,
-        "text": "Woodford Reserve's balanced taste is what bourbon should be.",
+        "comment": "Woodford Reserve's balanced taste is what bourbon should be.",
         "commentDate": "2023-05-07T00:00:00.000Z"
     },
     {
         "userId": 18,
         "whiskyId": 18,
         "rating": 4,
-        "text": "Knob Creek's full-bodied flavor leaves a lasting impression.",
+        "comment": "Knob Creek's full-bodied flavor leaves a lasting impression.",
         "commentDate": "2023-05-08T00:00:00.000Z"
     },
     {
         "userId": 19,
         "whiskyId": 19,
         "rating": 5,
-        "text": "Pappy Van Winkle's complexity is unrivaled. A truly rare gem.",
+        "comment": "Pappy Van Winkle's complexity is unrivaled. A truly rare gem.",
         "commentDate": "2023-05-09T00:00:00.000Z"
     },
     {
         "userId": 20,
         "whiskyId": 20,
         "rating": 5,
-        "text": "Highland Park offers a sublime balance of smoke and sweetness.",
+        "comment": "Highland Park offers a sublime balance of smoke and sweetness.",
         "commentDate": "2023-05-10T00:00:00.000Z"
     }
+
 ]

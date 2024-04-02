@@ -2,101 +2,141 @@
   {
     "name": "Alex Johnson",
     "email": "alex.johnson@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Bethany Hughes",
     "email": "bethany.hughes@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Charlie Smith",
     "email": "charlie.smith@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Danielle Adams",
     "email": "danielle.adams@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Ethan Wright",
     "email": "ethan.wright@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Fiona Clark",
     "email": "fiona.clark@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "George Davis",
     "email": "george.davis@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Hannah Brown",
     "email": "hannah.brown@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Ian Edwards",
     "email": "ian.edwards@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Julia Martinez",
     "email": "julia.martinez@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Kevin Lee",
     "email": "kevin.lee@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Laura White",
     "email": "laura.white@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Mike Young",
     "email": "mike.young@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Nina Carter",
     "email": "nina.carter@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Oscar King",
     "email": "oscar.king@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Paige Wilson",
     "email": "paige.wilson@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Quinn Thomas",
     "email": "quinn.thomas@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Ryan Scott",
     "email": "ryan.scott@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Sophie Moore",
     "email": "sophie.moore@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   },
   {
     "name": "Tyler Jackson",
     "email": "tyler.jackson@example.com",
-    "password": "password"
+    "password": "password",
+    "security_question": "What was your childhood pets name",
+    "security_answer": "bingo"
   }
 ]

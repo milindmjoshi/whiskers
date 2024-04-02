@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// TODO: Update everything for Whisky
-class Whisky extends Model {}
+
+class Whisky extends Model { }
 
 Whisky.init(
   {
@@ -22,6 +22,18 @@ Whisky.init(
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
+    },
+    image_path: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    // Add adminId to associate a Whisky with an Admin
+    adminId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'admin', // This should match the table name for Admins, adjust as necessary
+        key: 'id',
+      },
     },
   },
   {
