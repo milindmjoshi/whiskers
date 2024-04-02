@@ -1,7 +1,24 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const {Whisky } = require('../../models');
 const withAuth = require('../../utils/auth');
 const path = require('path');
+
+router.get('/',  async (req,res) => {
+  //TODO - Add auth
+  try{
+    let whiskyData = await Whisky.findAll();
+    if (whiskyData){
+      res.status(200).json(JSON.stringify(whiskyData));
+    }
+  }
+  catch(error){
+    console.log(error);
+    res.status(500).send("Error retrieving whisky data");
+  }
+  
+
+})
+
 
 //TODO: - Update to Whisky ROUTES //
 
