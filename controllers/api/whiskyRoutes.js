@@ -86,6 +86,40 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Update  whiskey 
+//router.put('/', withAuth, async (req, res) => {
+// TODO. Add auth
+router.put('/', async (req, res) => {
+  // sample body
+  // {
+  //   "id" : 3
+  //   "name" : "MJ Whiskey update",
+  //   "description": "Best Whiskey in town update",
+  // }
+  try {
+    // Search whiskey by pk 
+    const id = req.body.id;
+    const whiskey  = await Whisky.findByPk(id);
+    if (whiskey ){
+      console.log("Whisky found for update");
+      const whiskyUpdatedData = await whiskey.update({name: req.body.name, description: req.body.description},)
+      if (whiskyUpdatedData){
+        res.status(200).json(JSON.stringify(whiskyUpdatedData));
+      }
+    }
+    else{
+      res.status(404).send("Whiskey not Found to update");
+    }
+
+  } catch (err) {
+    console.log("Error updating new whiskey");
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+
 // Delete whiskey with id
 // http://localhost:3001/api/whiskeys/50 (DELETE)
 //router.delete('/:id', withAuth, async (req, res) => {
