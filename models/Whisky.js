@@ -23,7 +23,7 @@ Whisky.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    image_path: {
+    file_name: {
       type: DataTypes.STRING,
       allowNull: true,
     },
