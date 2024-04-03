@@ -1,48 +1,30 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+<div class="profile-name-container row">
+  <div class="col-auto search-and-name">
+    <h2 class="profile-name text-white">Welcome, {{name}}!</h2>
+    <input class="whisky-search" type="text" placeholder="search whiskys">
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+<div class="container-fluid profile-container">
+  <div class="row">
 
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+    <div class="my-whiskys-container col-12 col-sm-6">
+      <div class="my-whiskys-title-container">
+        <h2 class="my-whiskys-title">My Whiskys</h2>
       </div>
-      <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      <div class="my-whiskys-content-container">
+        {{> whisky-card }}
       </div>
     </div>
-    {{/each}}
+    <div class="whisky-feed-container col-12 col-sm-6">
+      <div class="whisky-feed-title-container">
+        <h2 class="whisky-feed-title">Whisky Feed</h2>
+      </div>
+       <div class="my-whisky-feed-content-container">
+        {{> whisky-feed }}
+      </div>
+    </div>
   </div>
-  {{/if}}
 </div>
 
 <script src="./js/profile.js"></script>
