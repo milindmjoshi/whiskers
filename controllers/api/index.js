@@ -3,6 +3,6 @@ const userRoutes = require('./userRoutes');
 const whiskyRoutes = require('./whiskyRoutes');
 
 router.use('/users', userRoutes);
-router.use('/whiskeys', whiskyRoutes);
+router.use('/whiskys', whiskyRoutes);
 
 module.exports = router;

@@ -27,6 +27,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
+            {{#if logged_in}}
+            <li class="nav-item active">
+              <a class="nav-link text-white logout" href="#">Logout</a>
+            </li>
+            {{else}}
             <li class="nav-item active">
               <a class="nav-link text-white" href="/login">Login</a>
             </li>
@@ -36,6 +41,7 @@
             <li class="nav-item">
               <a class="nav-link text-white" href="/admin">Admin Login</a>
             </li>
+            {{/if}}
           </ul>
         </div>
       </nav>

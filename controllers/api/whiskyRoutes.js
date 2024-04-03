@@ -33,11 +33,14 @@ router.get('/:name', async (req, res) => {
   console.log("Search for " + whiskyName);
   try {
     // Search whiskey by name 
-    const whiskeyData = await Whisky.findOne({ where: { name: { [Sequelize.Op.like]: whiskyName + "%" } } });
+    // const whiskeyData = await Whisky.findOne({ where: { name: { [Sequelize.Op.like]: whiskyName + "%" } } });
+    const whiskeyData = await Whisky.findAll({ where: { name: { [Sequelize.Op.like]: whiskyName + "%" } } });
     if (whiskeyData) {
+      console.log(whiskeyData)
       res.status(200).json(JSON.stringify(whiskeyData));
     }
     else {
+      console.log("Whisky not found");
       res.status(404).send("Whiskey not Found");
     }
   } catch (error) {
