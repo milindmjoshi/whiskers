@@ -10,7 +10,7 @@ async function handleLogin(event) {
   if (email && password) {
     try {
       // Send a POST request to the server with email and password
-      const response = await fetch('/login', { 
+      const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({
           email,
@@ -25,7 +25,7 @@ async function handleLogin(event) {
       if (response.ok) {
         console.log('Login successful');
         // Redirect the user to the profile page
-        window.location.href = '/profile'; 
+        window.location.href = '/profile';
       } else {
         // If the server responds with an error, display it
         const data = await response.json();
