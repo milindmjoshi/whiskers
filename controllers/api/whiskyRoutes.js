@@ -50,6 +50,7 @@ router.get('/:name', async (req, res) => {
       res.status(200).json(JSON.stringify(whiskeyData));
     }
     else {
+      console.log("Whisky not found");
       res.status(404).send("Whiskey not Found");
     }
   } catch (error) {

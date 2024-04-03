@@ -38,10 +38,12 @@ User.init(
     security_question: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: 'What was your childhood pets name?' // Default security question
     },
     security_answer: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: 'bingo', // Default security answer
       // Ensure the security answer is stored in lowercase
       set(value) {
         this.setDataValue('security_answer', value.toLowerCase());
@@ -53,12 +55,12 @@ User.init(
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        newUserData.security_answer = newUserData.security_answer.toLowerCase();
+        // newUserData.security_answer = newUserData.security_answer.toLowerCase();
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-        updatedUserData.security_answer = updatedUserData.security_answer.toLowerCase();
+        // updatedUserData.security_answer = updatedUserData.security_answer.toLowerCase();
         return updatedUserData;
       },
     },
