@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const fs = require('fs');
 const { Whisky, Rating } = require('../../models');
 const withAuth = require('../../utils/auth');
 const path = require('path');
@@ -33,8 +34,19 @@ router.get('/:name', async (req, res) => {
   console.log("Search for " + whiskyName);
   try {
     // Search whiskey by name 
-    const whiskeyData = await Whisky.findOne({ where: { name: { [Sequelize.Op.like]: whiskyName + "%" } } });
+    const whiskeyData = await Whisky.findAll({ where: { name: { [Sequelize.Op.like]: whiskyName + "%" } } });
+
     if (whiskeyData) {
+
+      // first read the image and base64Encode the file IF image file name exists. Note
+      // the image blob is not stored in the database
+      if (whiskeyData.file_name){
+        console.log("Base 64 encode file");
+        var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
+        whiskeyData.image = imageAsBase64;
+        console.log("Base 64 encoded file: " + whiskeyData.image);
+
+      }
       res.status(200).json(JSON.stringify(whiskeyData));
     }
     else {

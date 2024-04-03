@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Test</title>
+</head>
+<body>
+    <h1>Whiskers Add Whisky Test Page with File Upload</h1>
+    <h3>Enter a whisky name, description, and select a file to upload</h3>
+    <form ref='uploadForm' 
+      id='uploadForm' 
+      action='http://localhost:3001/api/whiskeys' 
+      method='post' 
+      encType="multipart/form-data">
+        
+        <label for="name">Whisky Name:</label>
+        <input type="text" name="name" >
+        <br>
+        <br>
+        <label for="description">Description:</label>
+        <input type="text" name="description">
+        <br>
+        <br>
+        <input type="file" name="imageFile" />
+        <br>
+        <br>
+        <input type='submit' value='Upload!' />
+        <input type="hidden" name="adminId" value="1">
+        <image id="whiskeyIm" width="150px" height="200px"></image>
+        
+       
+        
+        
+    </form>     
+    <script>
+        // Test code to get a whiseky image in base64 from DB and 
+        async function getWhiskeyImage() {
+            //const response = await fetch("http://localhost:3001/api/whiskeys/Oban%20Special");
+            const response = await fetch("http://localhost:3001/api/whiskeys/My Oban");
+            let whiskey = await response.json();
+            console.log(JSON.parse(whiskey));
+            let whiskeyJSON = JSON.parse(whiskey);
+            console.log(whiskeyJSON.name);
+            console.log(whiskeyJSON.description);
+            var img = document.getElementById("whiskeyIm");
+            img.src = "data:image;base64," + whiskeyJSON.image;
+        }
+        getWhiskeyImage();
+        //alert("hello");
+    </script>
+</body>
+</html>
