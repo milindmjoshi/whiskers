@@ -27,6 +27,10 @@ Whisky.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    image: {
+      type: DataTypes.BLOB,
+      allowNull: true,
+    },
     // Add adminId to associate a Whisky with an Admin
     adminId: {
       type: DataTypes.INTEGER,
