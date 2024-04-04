@@ -1,24 +1,37 @@
-{{!-- <section class="card">
-  <!-- The contents of this card links to the gallery page using the gallery ID -->
-  <a href="/gallery/{{id}}">
-    <!-- The card contains the gallery name as the card header -->
-    <header>{{name}}</header>
-    <!-- The card contains the first painting of the gallery -->
-    <img src="/images/{{paintings.[0].filename}}" alt="{{paintings.[0].description}}">
-  </a>
-</section> --}}
-
 <div class="card">
   <div class="img-container">
-    <img class="card-img-top" src="/assets/images/Aberfeldy.jpg" alt="Card image cap">
+    {{!-- <img class="card-img-top" src="/assets/images/Aberfeldy.jpg" alt="Card image cap"> --}}
+    <h5>{{whiskyId}}</h5>
   </div>
   <div class="card-body">
     <div class="card-header">
       <h5 class="card-title">Rating</h5>
-      <h5 class="card-title">Comments</h5>
+      {{!-- <h2 class="profile-name text-white">Rating, {{#each ratings as |rating|}}
+        <section class="card">
+
+
+          <p>By: {{rating.comment}}</p>
+          <p>By: {{rating.rating}}</p>
+          <p>By: {{rating.commentDate}}</p>
+
+        </section>
+        {{/each}}!
+      </h2> --}}
+      <h5 class="card-title" data-bs-toggle="collapse" href="#commentsList" role="button" aria-expanded="false"
+        aria-controls="commentsList">Comments</h5>
     </div>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-    </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+    <div class="collapse" id="commentsList">
+      <div class="list-group list-group-flush">
+        <!-- Comments will be dynamically inserted here -->
+        {{!-- {{#each ratings as |rating|}}
+        <div class="list-group-item">
+          <p>{{rating.whiskyId}}</p>
+        </div>
+        {{/each}} --}}
+      </div>
+    </div>
+
+
   </div>
 </div>

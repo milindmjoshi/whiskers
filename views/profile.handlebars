@@ -1,9 +1,22 @@
 <div class="profile-name-container row">
   <div class="col-auto search-and-name">
     <h2 class="profile-name text-white">Welcome, {{name}}!</h2>
+    {{!-- <h2 class="profile-name text-white">Rating, {{#each ratings as |rating|}}
+      <section class="card">
+
+
+        <p>By: {{rating.comment}}</p>
+        <p>By: {{rating.rating}}</p>
+        <p>By: {{rating.commentDate}}</p>
+
+      </section>
+      {{/each}}!
+    </h2> --}}
     <input class="whisky-search" type="text" placeholder="search whiskys">
   </div>
 </div>
+{{!-- {{ratings}} --}}
+
 
 <div class="container-fluid profile-container">
   <div class="row">
@@ -13,18 +26,23 @@
         <h2 class="my-whiskys-title">My Whiskys</h2>
       </div>
       <div class="my-whiskys-content-container">
-        {{> whisky-card }}
+        {{#each ratings}}
+        {{> whisky-card whisky=this.whisky}}
+        {{/each}}
       </div>
     </div>
     <div class="whisky-feed-container col-12 col-sm-6">
       <div class="whisky-feed-title-container">
         <h2 class="whisky-feed-title">Whisky Feed</h2>
       </div>
-       <div class="my-whisky-feed-content-container">
+      <div class="my-whisky-feed-content-container">
         {{> whisky-feed }}
       </div>
     </div>
   </div>
 </div>
+<script>
+  const userId = "{{id}}";
+</script>
 
 <script src="./js/profile.js"></script>
