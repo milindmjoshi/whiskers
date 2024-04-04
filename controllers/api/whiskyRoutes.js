@@ -6,12 +6,69 @@ const path = require('path');
 
 const Sequelize = require('sequelize');
 
+// Object for whiskey data avg rating and comments
+class WhiskeyData {
+  constructor(name, avgRating, comments) {
+    this.name = name;
+    this.avgRating = avgRating;
+    this.comments = comments;
+  }
+}
+
+// Get whiskey summary data for each whiseky which includes the avg rating and an array of all the comments
+function getWhiskySummaryData(whiskey){
+  let whiskeyData;
+  let ratingCount = 0;
+  let ratingTotal = 0;
+  let avgRating = 0;
+  let comments = new Array();
+  whiskey.ratings.forEach((rating)=>{
+    ratingTotal += rating.rating;
+    ratingCount +=1;
+    comments.push(rating.comment);
+  })
+  if (ratingCount > 0){  
+    avgRating =  (ratingTotal/ratingCount).toFixed(2);
+  }
+  whiskeyData = new WhiskeyData(whiskey.name,avgRating,comments);
+  //console.log("Whiskey data summary: " + JSON.stringify(whiskeyData));
+  return whiskeyData;
+}
+
+// Get all whiskeys with avg rating
+router.get('/averages', async (req, res) => {
+  //TODO - Add auth
+  let whiskeyDataSummary = new Array();
+  try {
+    let allWhiskyData = await Whisky.findAll({
+      // This will retrieve every Whisky's associated Rating data.  
+      include: [{ model: Rating }],
+    });
+    if (allWhiskyData) {
+      allWhiskyData.forEach((whiskey)=>{
+        whiskeyDataSummary.push(getWhiskySummaryData(whiskey));
+      })
+    }
+
+    console.log(whiskeyDataSummary);
+
+    res.status(200).json(JSON.stringify(whiskeyDataSummary));
+  }
+  catch (error) {
+    console.log(error);
+    res.status(500).send("Error retrieving whisky data summary");
+  }
+
+})
 
 // Get all whiskeys
 router.get('/', async (req, res) => {
   //TODO - Add auth
   try {
-    let whiskyData = await Whisky.findAll();
+    let whiskyData = await Whisky.findAll({
+      // This will retrieve every Whisky's associated Rating data.  
+      include: [{ model: Rating }],
+    });
     if (whiskyData) {
       res.status(200).json(JSON.stringify(whiskyData));
     }
