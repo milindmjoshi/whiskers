@@ -42,6 +42,8 @@ router.get('/profile', withAuth, async (req, res) => {
   console.log("** Inside profile route ***" + JSON.stringify(req.session));
   try {
     // Find the logged in user based on the session ID
+    let whiskeyRatingsData;
+    let ratings;
     let userData;
     if (req.session.isAdmin) {
       userData = await Admin.findByPk(req.session.user_id, {
@@ -52,7 +54,12 @@ router.get('/profile', withAuth, async (req, res) => {
       userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
       })
+      whiskeyRatingsData = await Rating.findAll({ where: { user_id: userData.id } });
+      ratings = whiskeyRatingsData.map((rating) =>
+      rating.get({ plain: true }))
+      console.log(ratings)
     };
+
 
     const user = userData.get({ plain: true });
     console.log("User is :" + JSON.stringify(user));
@@ -66,6 +73,8 @@ router.get('/profile', withAuth, async (req, res) => {
     else {
       res.render('profile', {
         ...user,
+        ratings,
+        // comment: whiskeyRatingsData[0].comment,
         logged_in: true
       });
     }

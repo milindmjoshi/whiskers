@@ -77,6 +77,13 @@
         "commentDate": "2023-05-01T00:00:00.000Z"
     },
     {
+        "userId": 10,
+        "whiskyId": 11,
+        "rating": 5,
+        "comment": "Laphroaig's flavor is unmatched and has been my favorite for years.",
+        "commentDate": "2023-05-01T00:00:00.000Z"
+    },
+    {
         "userId": 12,
         "whiskyId": 12,
         "rating": 4,
@@ -91,9 +98,23 @@
         "commentDate": "2023-05-03T00:00:00.000Z"
     },
     {
+        "userId": 10,
+        "whiskyId": 13,
+        "rating": 3,
+        "comment": "Chivas Regal's blend is smooth and versatile, great for any occasion.",
+        "commentDate": "2023-05-03T00:00:00.000Z"
+    },
+    {
         "userId": 14,
         "whiskyId": 14,
         "rating": 5,
+        "comment": "Glenlivet sets the standard for Speyside whiskies. Simply exquisite.",
+        "commentDate": "2023-05-04T00:00:00.000Z"
+    },
+    {
+        "userId": 10,
+        "whiskyId": 14,
+        "rating": 4,
         "comment": "Glenlivet sets the standard for Speyside whiskies. Simply exquisite.",
         "commentDate": "2023-05-04T00:00:00.000Z"
     },
