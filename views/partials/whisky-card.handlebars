@@ -1,36 +1,20 @@
 <div class="card">
   <div class="img-container">
-    {{!-- <img class="card-img-top" src="/assets/images/Aberfeldy.jpg" alt="Card image cap"> --}}
-    <h5>{{whiskyId}}</h5>
+    {{!-- <h5>{{whiskyId}}</h5> --}}
+    <img class="card-img-top" src="http://localhost:3001/api/whiskeys/{{whiskyId}}" alt="Card image cap">
   </div>
   <div class="card-body">
     <div class="card-header">
-      <h5 class="card-title">Rating</h5>
-      {{!-- <h2 class="profile-name text-white">Rating, {{#each ratings as |rating|}}
-        <section class="card">
-
-
-          <p>By: {{rating.comment}}</p>
-          <p>By: {{rating.rating}}</p>
-          <p>By: {{rating.commentDate}}</p>
-
-        </section>
-        {{/each}}!
-      </h2> --}}
-      <h5 class="card-title" data-bs-toggle="collapse" href="#commentsList" role="button" aria-expanded="false"
-        aria-controls="commentsList">Comments</h5>
+      <h5 class="card-title">Your Rating <span>{{rating}}</span></h5>
+         <h5 class="card-title" data-bs-toggle="collapse" href="#commentsList" role="button" aria-expanded="false"
+        aria-controls="commentsList">Your Comments</h5>
     </div>
 
-    <div class="collapse" id="commentsList">
-      <div class="list-group list-group-flush">
-        <!-- Comments will be dynamically inserted here -->
-        {{!-- {{#each ratings as |rating|}}
-        <div class="list-group-item">
-          <p>{{rating.whiskyId}}</p>
-        </div>
-        {{/each}} --}}
+    {{!-- <div class="collapse" id="commentsList"> --}}
+      <div class="comment-section">
+         <p class="comment-text">{{comment}}</p>
       </div>
-    </div>
+    {{!-- </div> --}}
 
 
   </div>
