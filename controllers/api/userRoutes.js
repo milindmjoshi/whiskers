@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Admin } = require('../../models');
 
 
 /*
@@ -40,16 +40,41 @@ POST http://localhost:3001/api/users/login
 */
 router.post('/login', async (req, res) => {
   try {
+
+    let validPassword;
+    let adminData;
+
+    // First check user table
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
+
+      // if not user see if an admin is logging in
+      console.log("Checking admin table");
+      adminData = await Admin.findOne({ where: { email: req.body.email } });
+      console.log("Done admin table");
+
+
+      if (!adminData){
+        console.log("Not in admin table");
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
       return;
+      }
+      else{
+        console.log("checking admin password " + JSON.stringify(adminData));
+        validPassword =   adminData.checkPassword(req.body.password);
+        console.log("admin logged in " + req.body.email); 
+      }
+    }
+    else{
+      validPassword =   userData.checkPassword(req.body.password);
+      console.log("User logged in " + req.body.email); 
+
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+ 
 
     if (!validPassword) {
       res
@@ -59,9 +84,18 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      console.log("Saving Session");
+      if (userData){
+        console.log("Set user in session");
+        req.session.user_id = userData.id;
+      }
+      else {
+        console.log("Set admin in session");
+        req.session.user_id = adminData.id;
+        req.session.isAdmin = true;
+      }
       req.session.logged_in = true;
-
+      
       res.json({ user: userData, message: 'You are now logged in!' });
     });
 
@@ -69,6 +103,7 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 
 
@@ -111,6 +146,7 @@ POST http://localhost:3001/api/users/logout
 */
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
+    console.log("User Logging out: " + JSON.stringify(req.session));
     req.session.destroy(() => {
       res.status(204).end();
     });

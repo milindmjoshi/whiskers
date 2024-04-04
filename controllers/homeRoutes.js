@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Rating, Whisky } = require('../models');
+const { User, Admin, Rating, Whisky } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
@@ -39,20 +39,45 @@ router.get('/', (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
-  console.log("** Inside profile route ***");
+  console.log("** Inside profile route ***" + JSON.stringify(req.session));
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-    });
+    let whiskeyRatingsData;
+    let ratings;
+    let userData;
+    if (req.session.isAdmin) {
+      userData = await Admin.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+      })
+    }
+    else {
+      userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+      })
+      whiskeyRatingsData = await Rating.findAll({ where: { user_id: userData.id } });
+      ratings = whiskeyRatingsData.map((rating) =>
+      rating.get({ plain: true }))
+      console.log(ratings)
+    };
+
 
     const user = userData.get({ plain: true });
     console.log("User is :" + JSON.stringify(user));
 
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
+    if (req.session.isAdmin) {
+      res.render('admin', {
+        ...user,
+        logged_in: true
+      });
+    }
+    else {
+      res.render('profile', {
+        ...user,
+        ratings,
+        // comment: whiskeyRatingsData[0].comment,
+        logged_in: true
+      });
+    }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

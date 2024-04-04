@@ -11,36 +11,35 @@ const Sequelize = require('sequelize');
 // http://localhost:3001/api/ratings/user/5
 
 router.get('/user/:id', async (req, res) => {
-    //TODO - Add auth
-    let id = req.params.id;
-    console.log("Search for ratings for user " + id);
-    try {
-      // Search ratings  by  whiskey Id 
-      const whiskeyRatingsData = await Rating.findAll({ where: { user_id: id }});
-  
-      if (whiskeyRatingsData) {
-  
+  //TODO - Add auth
+  let id = req.params.id;
+  console.log("Search for ratings for user " + id);
+  try {
+    // Search ratings  by  whiskey Id 
+    const whiskeyRatingsData = await Rating.findAll({ where: { user_id: id } });
+
+    if (whiskeyRatingsData) {
       // For now, just return the ratings array (will need to update to add the whiskey image)
-  
+
       //   // first read the image and base64Encode the file IF image file name exists
       //   if (whiskeyData.file_name){
       //     console.log("Base 64 encode file");
       //     var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
       //     whiskeyData.image = imageAsBase64;
       //     console.log("Base 64 encoded file: " + whiskeyData.image);
-  
+
       //   }
-        res.status(200).json(JSON.stringify(whiskeyRatingsData));
-      }
-      else {
-        res.status(404).send("Rating not Found for user  with id " + id );
-      }
-    } catch (error) {
-      console.log(error);
-      res.status(500).send("Error searching ratings by user id");
+      res.status(200).json(JSON.stringify(whiskeyRatingsData));
     }
-  
-  })
+    else {
+      res.status(404).send("Rating not Found for user  with id " + id);
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error searching ratings by user id");
+  }
+
+})
 
 
 // Get all ratings for a whiskey
@@ -52,24 +51,24 @@ router.get('/whiskey/:id', async (req, res) => {
   console.log("Search ratings for whiskey id " + id);
   try {
     // Search ratings  by  whiskey Id 
-    const whiskeyRatingsData = await Rating.findAll({ where: { whisky_id: id }});
+    const whiskeyRatingsData = await Rating.findAll({ where: { whisky_id: id } });
 
     if (whiskeyRatingsData) {
 
-    // For now, just return the ratings array (will need to update to add the whiskey image)
+      // For now, just return the ratings array (will need to update to add the whiskey image)
 
-    //   // first read the image and base64Encode the file IF image file name exists
-    //   if (whiskeyData.file_name){
-    //     console.log("Base 64 encode file");
-    //     var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
-    //     whiskeyData.image = imageAsBase64;
-    //     console.log("Base 64 encoded file: " + whiskeyData.image);
+      //   // first read the image and base64Encode the file IF image file name exists
+      //   if (whiskeyData.file_name){
+      //     console.log("Base 64 encode file");
+      //     var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
+      //     whiskeyData.image = imageAsBase64;
+      //     console.log("Base 64 encoded file: " + whiskeyData.image);
 
-    //   }
+      //   }
       res.status(200).json(JSON.stringify(whiskeyRatingsData));
     }
     else {
-      res.status(404).send("Rating not Found for Whiskey with id " + id );
+      res.status(404).send("Rating not Found for Whiskey with id " + id);
     }
   } catch (error) {
     console.log(error);
@@ -91,16 +90,16 @@ router.get('/', async (req, res) => {
 
     if (whiskeyRatingsData) {
 
-    // For now, just return the ratings array (will need to update to add the whiskey image)
+      // For now, just return the ratings array (will need to update to add the whiskey image)
 
-    //   // first read the image and base64Encode the file IF image file name exists
-    //   if (whiskeyData.file_name){
-    //     console.log("Base 64 encode file");
-    //     var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
-    //     whiskeyData.image = imageAsBase64;
-    //     console.log("Base 64 encoded file: " + whiskeyData.image);
+      //   // first read the image and base64Encode the file IF image file name exists
+      //   if (whiskeyData.file_name){
+      //     console.log("Base 64 encode file");
+      //     var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
+      //     whiskeyData.image = imageAsBase64;
+      //     console.log("Base 64 encoded file: " + whiskeyData.image);
 
-    //   }
+      //   }
       res.status(200).json(JSON.stringify(whiskeyRatingsData));
     }
     else {
