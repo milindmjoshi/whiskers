@@ -74,7 +74,8 @@ body {
 }
 
 
-.search-results {
+.search-results,
+.form-container {
     flex-direction: column;
     align-items: center;
 }
@@ -114,7 +115,6 @@ input[type="password"] {
     display: flex;
     justify-content: center;
     padding-bottom: 40vh;
-    align-items: center;
     height: 100vh; 
     width: 100%; 
 }
