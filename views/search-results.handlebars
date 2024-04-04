@@ -1,22 +1,39 @@
 <div class="row login-container">
-  <div class="row above-form"></div>
-  <div class="col-md-6 form-container">
-    <h2 class="login-title">Search Results</h2>
-
-    <form class="form login-form">
-      <div class="form-group email-field">
-        {{!-- <label for="email-login">email:</label> --}}
-        <input class="form-input" type="text" placeholder="email" id="email-login" />
+  <div class="row search-container">
+    <div class="col-md-6">
+      <h1 class="search-title">Search Results</h1>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card-container">
+      <div class="card whiskey-card" >
+        <img src="/public/assets/images/ballantines-blended.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Whiskey Name {{whiskeys}}</h5>
+          <p class="card-text">Whiskey Description</p>
+          <div class="rating-container">
+           <div class="rating-container">
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+          </div>
+          <!-- Comment Section placeholder -->
+          <div class="comment-section">
+            {{comment-section}}
+            <textarea class="form-control" id="comment" rows="3" placeholder="Leave a comment"></textarea>
+            <button type="button" class="btn btn-primary mt-2">Submit</button>
+          </div>
+        </div>
       </div>
-      <div class="form-group password-field">
-        {{!-- <label for="password-login">password:</label> --}}
-        <input class="form-input" type="password" placeholder="password" id="password-login" />
       </div>
-      <div class="form-group login-button-container">
-        <button class="btn btn-secondary btn-lg" type="submit">login</button>
-      </div>
-    </form>
+    </div>
   </div>
 </div>
+
 
 <script src="./js/login.js"></script>
