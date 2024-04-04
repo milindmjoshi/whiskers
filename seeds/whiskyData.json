@@ -5,7 +5,7 @@
     "averageRating": "4",
     "date_created": "2023-04-01T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "jack-daniels.jpg"
   },
   {
     "name": "Jameson",
@@ -13,7 +13,7 @@
     "averageRating": "4",
     "date_created": "2023-04-02T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "jameson-irish.jpg"
   },
   {
     "name": "Johnnie Walker",
@@ -21,7 +21,7 @@
     "averageRating": "4",
     "date_created": "2023-04-03T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "johnnie-walker-double-black.jpg"
   },
   {
     "name": "Maker's Mark",
@@ -101,7 +101,7 @@
     "averageRating": "4",
     "date_created": "2023-04-13T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "chivas-regal-25.jpg"
   },
   {
     "name": "Glenlivet",
@@ -117,7 +117,7 @@
     "averageRating": "4",
     "date_created": "2023-04-15T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Four Roses.jpeg"
   },
   {
     "name": "Bulleit",
@@ -133,7 +133,7 @@
     "averageRating": "4",
     "date_created": "2023-04-17T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Woodford Reserve.jpeg"
   },
   {
     "name": "Knob Creek",
@@ -141,7 +141,7 @@
     "averageRating": "4",
     "date_created": "2023-04-18T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Knob Creek.jpeg"
   },
   {
     "name": "Pappy Van Winkle's Family Reserve",
@@ -149,7 +149,7 @@
     "averageRating": "5",
     "date_created": "2023-04-19T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Pappy Van Winkle's Family Reserve.jpeg"
   },
   {
     "name": "Highland Park",
@@ -157,7 +157,7 @@
     "averageRating": "4",
     "date_created": "2023-04-20T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Highland Park.jpeg"
   },
   {
     "name": "Old Forester",
@@ -165,7 +165,7 @@
     "averageRating": "4",
     "date_created": "2023-04-21T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Old Forester.jpeg"
   },
   {
     "name": "Macallan",
@@ -173,7 +173,7 @@
     "averageRating": "5",
     "date_created": "2023-04-22T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Macallan.jpegconnemara"
   },
   {
     "name": "Dalmore",
@@ -181,7 +181,7 @@
     "averageRating": "4",
     "date_created": "2023-04-23T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Dalmore.jpeg"
   },
   {
     "name": "Aberfeldy",
@@ -197,7 +197,7 @@
     "averageRating": "4",
     "date_created": "2023-04-25T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Glenmorangie.jpeg"
   },
   {
     "name": "Oban",
@@ -205,7 +205,7 @@
     "averageRating": "4",
     "date_created": "2023-04-26T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Oban.jpeg"
   },
   {
     "name": "Bowmore",
@@ -213,7 +213,7 @@
     "averageRating": "4",
     "date_created": "2023-04-27T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Bowmore.jpg"
   },
   {
     "name": "Buffalo Trace",
@@ -221,7 +221,7 @@
     "averageRating": "4",
     "date_created": "2023-04-28T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Buffalo Trace.jpeg"
   },
   {
     "name": "Eagle Rare",
@@ -229,7 +229,7 @@
     "averageRating": "4",
     "date_created": "2023-04-29T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Eagle Rare.jpg"
   },
   {
     "name": "Blanton's",
@@ -237,7 +237,7 @@
     "averageRating": "5",
     "date_created": "2023-04-30T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "Blanton's.jpg"
   },
   {
     "name": "Suntory Yamazaki",
