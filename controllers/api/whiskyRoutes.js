@@ -23,7 +23,56 @@ router.get('/', async (req, res) => {
 
 
 })
+// Search whiskey by id
+// http://localhost:3001/api/whiskeys/15
 
+router.get('/:id', async (req, res) => {
+  //TODO - Add auth
+  let whiskeyId = req.params.id;
+  console.log("Search for whiskey with id " + whiskeyId);
+  try {
+    // Search whiskey by name 
+    const whiskeyData = await Whisky.findByPk(whiskeyId);
+
+    if (whiskeyData) {
+
+      // first read the image and base64Encode the file IF image file name exists. Note
+      // the image blob is not stored in the database
+      // if (whiskeyData.file_name){
+      //   console.log("Base 64 encode file");
+      //   var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
+      //   whiskeyData.image = imageAsBase64;
+      //   console.log("Base 64 encoded file: " + whiskeyData.image);
+
+      // }
+      //res.status(200).json(JSON.stringify(whiskeyData));
+      res.sendFile(path.join(__dirname, '../../public/assets/images/chivas-regal-12.jpg'));
+
+    }
+    else {
+      console.log("Whisky not found");
+      res.status(404).send("Whiskey not Found");
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error searching whikey by id");
+  }
+  // switch(whisky) {
+  //   case 'chivas-12': 
+  //         res.sendFile(path.join(__dirname, '../../public/assets/images/chivas-regal-12.jpg'));
+  //         break;
+  //   case 'chivas-18':
+  //         res.sendFile(path.join(__dirname,'../../public/assets/images/chivas-regal-18.jpg'));
+  //         break;
+  //   case  'chivas-25':
+  //         res.sendFile(path.join(__dirname,'../../public/assets/images/chivas-regal-25.jpg'));
+  //         break;
+  //   default:
+  //         console.log("Whisky not found:" + whisky);
+  //         res.status(404).send('Whisky Not Found: ' + whisky);     
+  // }
+
+})
 
 // Search whiskey by name
 // http://localhost:3001/api/whiskeys/John
