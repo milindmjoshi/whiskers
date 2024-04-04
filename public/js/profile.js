@@ -7,7 +7,7 @@ async function handleWhiskySearch(event) {
     if (searchTerm) {
         try {
             // Send a GET request to the server with the search term
-            const response = await fetch(`/api/whiskys/${encodeURIComponent(searchTerm)}`, {
+            const response = await fetch(`/api/whiskeys/${encodeURIComponent(searchTerm)}`, {
                 method: 'GET', // GET request for searching
                 headers: {
                     'Content-Type': 'application/json'
