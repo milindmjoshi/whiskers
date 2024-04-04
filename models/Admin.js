@@ -5,7 +5,9 @@ const sequelize = require('../config/connection');
 
 
 class Admin extends Model {
-    // You can add admin-specific methods here
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+      }
 }
 
 Admin.init(

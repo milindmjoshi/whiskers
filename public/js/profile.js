@@ -7,7 +7,7 @@ async function handleWhiskySearch(event) {
     if (searchTerm) {
         try {
             // Send a GET request to the server with the search term
-            const response = await fetch(`/api/whiskys/${encodeURIComponent(searchTerm)}`, {
+            const response = await fetch(`/api/whiskeys/${encodeURIComponent(searchTerm)}`, {
                 method: 'GET', // GET request for searching
                 headers: {
                     'Content-Type': 'application/json'
@@ -33,8 +33,31 @@ async function handleWhiskySearch(event) {
     }
 }
 
+async function getProfileWhiskeys() {
+    console.log("Fetching whiskeys ratings for user ID:", userId);
+    try {
+        const response = await fetch(`/api/ratings/user/${userId}`);
+        if (response.ok) {
+            const whiskeyRatingsData = await response.json();
+            console.log("Whiskey Ratings Data:", whiskeyRatingsData);
+            // Process the whiskey ratings data here
+            // For example, display it on the page
+        } else {
+            // Handle the case where the server responds with an error status code
+            console.error("Failed to fetch whiskey ratings for user ID:", userId);
+            alert("Failed to load whiskey ratings.");
+        }
+    } catch (error) {
+        console.error("Error fetching whiskey ratings:", error);
+        alert("An error occurred while trying to fetch whiskey ratings.");
+    }
+}
+
+
 document.querySelector('.whisky-search').addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
         handleWhiskySearch(event);
     }
 });
+
+getProfileWhiskeys()
