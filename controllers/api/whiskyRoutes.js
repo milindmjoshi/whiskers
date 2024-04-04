@@ -46,7 +46,7 @@ router.get('/:id', async (req, res) => {
 
       // }
       //res.status(200).json(JSON.stringify(whiskeyData));
-      res.sendFile(path.join(__dirname, '../../public/assets/images/chivas-regal-12.jpg'));
+      res.sendFile(path.join(__dirname, '../../public/assets/images/'+ whiskeyData.file_name));
 
     }
     else {
