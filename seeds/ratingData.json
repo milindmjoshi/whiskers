@@ -7,6 +7,20 @@
         "commentDate": "2023-04-21T00:00:00.000Z"
     },
     {
+        "userId": 3,
+        "whiskyId": 1,
+        "rating": 5,
+        "comment": "A classic whiskey. My favorite.",
+        "commentDate": "2023-04-21T00:00:00.000Z"
+    },
+    {
+        "userId": 6,
+        "whiskyId": 1,
+        "rating": 5,
+        "comment": "You can't go wrong with this classic whiskey!.",
+        "commentDate": "2023-04-21T00:00:00.000Z"
+    },
+    {
         "userId": 2,
         "whiskyId": 2,
         "rating": 5,

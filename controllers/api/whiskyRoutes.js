@@ -8,30 +8,31 @@ const Sequelize = require('sequelize');
 
 // Object for whiskey data avg rating and comments
 class WhiskeyData {
-  constructor(name, avgRating, comments) {
+  constructor(name, avgRating, comments, id) {
     this.name = name;
     this.avgRating = avgRating;
     this.comments = comments;
+    this.id = id;
   }
 }
 
 // Get whiskey summary data for each whiseky which includes the avg rating and an array of all the comments
-function getWhiskySummaryData(whiskey){
+function getWhiskySummaryData(whiskey) {
   let whiskeyData;
   let ratingCount = 0;
   let ratingTotal = 0;
   let avgRating = 0;
   let comments = new Array();
-  whiskey.ratings.forEach((rating)=>{
+  whiskey.ratings.forEach((rating) => {
     ratingTotal += rating.rating;
-    ratingCount +=1;
+    ratingCount += 1;
     comments.push(rating.comment);
   })
-  if (ratingCount > 0){  
-    avgRating =  (ratingTotal/ratingCount).toFixed(2);
+  if (ratingCount > 0) {
+    avgRating = (ratingTotal / ratingCount).toFixed(2);
   }
-  whiskeyData = new WhiskeyData(whiskey.name,avgRating,comments);
-  //console.log("Whiskey data summary: " + JSON.stringify(whiskeyData));
+  whiskeyData = new WhiskeyData(whiskey.name, avgRating, comments, whiskey.id);
+  console.log("Whiskey data summary: " + JSON.stringify(whiskeyData));
   return whiskeyData;
 }
 
@@ -45,14 +46,18 @@ router.get('/averages', async (req, res) => {
       include: [{ model: Rating }],
     });
     if (allWhiskyData) {
-      allWhiskyData.forEach((whiskey)=>{
+      allWhiskyData.forEach((whiskey) => {
         whiskeyDataSummary.push(getWhiskySummaryData(whiskey));
       })
     }
 
-    console.log(whiskeyDataSummary);
+    // console.log("whiskeyDataSummary from whiskey routes: " + JSON.stringify(whiskeyDataSummary, null, 2));
 
-    res.status(200).json(JSON.stringify(whiskeyDataSummary));
+
+    res.status(200).json(whiskeyDataSummary);
+    // res.render('profile', {
+    //   whiskeyDataSummary
+    // });
   }
   catch (error) {
     console.log(error);
@@ -103,7 +108,7 @@ router.get('/:id', async (req, res) => {
 
       // }
       //res.status(200).json(JSON.stringify(whiskeyData));
-      res.sendFile(path.join(__dirname, '../../public/assets/images/'+ whiskeyData.file_name));
+      res.sendFile(path.join(__dirname, '../../public/assets/images/' + whiskeyData.file_name));
 
     }
     else {
@@ -146,9 +151,9 @@ router.get('/name/:name', async (req, res) => {
 
       // first read the image and base64Encode the file IF image file name exists. Note
       // the image blob is not stored in the database
-      if (whiskeyData.file_name){
+      if (whiskeyData.file_name) {
         console.log("Base 64 encode file");
-        var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
+        var imageAsBase64 = fs.readFileSync(path.join(__dirname, "../../public/assets/images/" + whiskeyData.file_name), 'base64');
         whiskeyData.image = imageAsBase64;
         console.log("Base 64 encoded file: " + whiskeyData.image);
 
@@ -225,7 +230,7 @@ router.post('/', async (req, res) => {
       name: req.body.name,
       description: req.body.description,
       adminId: req.body.adminId,
-      file_name: imageFile? imageFile.name :null
+      file_name: imageFile ? imageFile.name : null
     });
 
     res.status(200).json(newWhiskey);
