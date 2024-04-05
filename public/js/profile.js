@@ -65,6 +65,7 @@ async function getFeedWhiskeys() {
             // Select the container
             const whiskeyFeedContainer = document.querySelector('.my-whisky-feed-content-container');
 
+
             // Clear existing content
             whiskeyFeedContainer.innerHTML = '';
 
@@ -77,6 +78,10 @@ async function getFeedWhiskeys() {
                 const commentsHTML = whiskey.comments.map(comment => `<p class="comment-text border">${comment}</p>`).join('');
 
                 whiskeyElement.innerHTML = `
+                <div class="add-rating-section">
+                <h5 class="add-rating-button" data-whiskey-id="${whiskey.id}">Add Rating</h5>
+
+                </div>
                      <div class="img-container">
     
                         <img class="card-img-top" src="http://localhost:3001/api/whiskeys/${whiskey.id}" alt="Card image cap"> 
@@ -96,6 +101,89 @@ async function getFeedWhiskeys() {
                 `;
 
                 whiskeyFeedContainer.appendChild(whiskeyElement);
+
+
+
+
+
+            });
+            whiskeyFeedContainer.addEventListener('click', function (e) {
+                if (e.target && e.target.matches('.add-rating-button')) {
+                    const whiskeyId = e.target.getAttribute('data-whiskey-id');
+                    console.log('Add rating for whiskey ID:', whiskeyId);
+
+                    const cardElement = e.target.closest('.card');
+                    let ratingSection = cardElement.querySelector('.rating-section');
+                    if (!ratingSection) {
+                        ratingSection = document.createElement('div');
+                        ratingSection.className = 'rating-section';
+                        ratingSection.style.display = 'block'; // Explicitly set display to block
+                        ratingSection.innerHTML = `
+                            <div class="mt-3">
+                                <label for="rating-${whiskeyId}" class="form-label">Rating (1-5):</label>
+                                <input type="number" class="form-control" id="rating-${whiskeyId}" min="1" max="5">
+                            </div>
+                            <div class="mt-3">
+                                <label for="comment-${whiskeyId}" class="form-label">Comment:</label>
+                                <textarea class="form-control" id="comment-${whiskeyId}" rows="3"></textarea>
+                            </div>
+                            <button class="btn btn-primary mt-3 save-rating-btn" data-whiskey-id="${whiskeyId}">Save Rating</button>
+                        `;
+
+                        cardElement.appendChild(ratingSection);
+                    } else {
+                        // Toggle visibility
+                        ratingSection.style.display = ratingSection.style.display === 'none' ? 'block' : 'none';
+                    }
+                }
+                // If the save rating button was clicked, send the data to the server
+                if (e.target && e.target.matches('.save-rating-btn')) {
+                    e.preventDefault(); // Prevent form submission if wrapped in a form
+            
+                    // Async function to handle submission
+                    (async () => {
+                        const whiskeyId = e.target.getAttribute('data-whiskey-id');
+                        const rating = document.querySelector(`#rating-${whiskeyId}`).value;
+                        const comment = document.querySelector(`#comment-${whiskeyId}`).value;
+            
+                        const postData = {
+                            userId: userId,
+                            whiskyId: whiskeyId,
+                            rating: parseInt(rating, 10), // Ensure the rating is sent as a number
+                            comment: comment,
+                        };
+            
+                        try {
+                            const response = await fetch('/api/ratings', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify(postData),
+                            });
+            
+                            if (response.ok) {
+                                const result = await response.json();
+                                console.log('Rating submitted successfully', result);
+                                // Close the rating section
+                                const cardElement = e.target.closest('.card');
+                                let ratingSection = cardElement.querySelector('.rating-section');
+                                if (ratingSection) {
+                                    ratingSection.style.display = 'none';
+                                }
+                                // Optionally, reset the form fields or give feedback to the user
+                                document.querySelector(`#rating-${whiskeyId}`).value = '';
+                                document.querySelector(`#comment-${whiskeyId}`).value = '';
+                            } else {
+                                console.error('Failed to submit rating');
+                                // Handle server errors or show feedback to the user
+                            }
+                        } catch (error) {
+                            console.error('Error submitting rating:', error);
+                            // Handle network errors or show feedback to the user
+                        }
+                    })();
+                }
             });
         } else {
             console.error("Failed to get average whiskey data");
@@ -110,25 +198,11 @@ async function getFeedWhiskeys() {
 
 
 
-async function handleAddRating() {
-    console.log("Add Rating/Comment for User ID: " + userId + " and Whiskey ID: " + whiskeyId);
-    // try {
-    //     const response = await fetch(`/api/ratings/user/${userId}`);
-    //     if (response.ok) {
-    //         const whiskeyRatingsData = await response.json();
-    //         console.log("Whiskey Ratings Data:", whiskeyRatingsData);
-    //         // Process the whiskey ratings data here
-    //         // For example, display it on the page
-    //     } else {
-    //         // Handle the case where the server responds with an error status code
-    //         console.error("Failed to fetch whiskey ratings for user ID:", userId);
-    //         alert("Failed to load whiskey ratings.");
-    //     }
-    // } catch (error) {
-    //     console.error("Error fetching whiskey ratings:", error);
-    //     alert("An error occurred while trying to fetch whiskey ratings.");
-    // }
-}
+
+
+
+
+
 
 document.querySelector('.whisky-search').addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
