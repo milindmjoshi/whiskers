@@ -112,6 +112,32 @@ router.get('/', async (req, res) => {
 
 })
 
+// Add  Rating 
+// http://localhost:3001/api/ratings/   (POST)
+//router.put('/', withAuth, async (req, res) => {
+// TODO. Add auth
+router.post('/', async (req, res) => {
+  // sample body
+  // {
+  //   "userId" : 3,
+  //   "whiskyId": 4,
+  //   "rating" : 1,
+  //   "comment": "Not so good",
+  // }
+  try {
+    const rating = await Rating.create({...req.body});
+    if (rating){
+        console.log("Rating created");
+        res.status(200).json(JSON.stringify(rating));
+    }
+
+  } catch (err) {
+    console.log("Error creating rating");
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // Update  Rating 
 // http://localhost:3001/api/ratings/   (PUT)
 //router.put('/', withAuth, async (req, res) => {
