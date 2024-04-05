@@ -54,7 +54,11 @@ router.get('/profile', withAuth, async (req, res) => {
       userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
       })
-      whiskeyRatingsData = await Rating.findAll({ where: { user_id: userData.id } });
+      whiskeyRatingsData = await Rating.findAll({ where: { user_id: userData.id } ,
+          // This will retrieve every ratings associated Whisky data.  
+          include: [{ model: Whisky }],
+      });
+      console.log("Rating With Whiskey Name" + JSON.stringify(whiskeyRatingsData));
       ratings = whiskeyRatingsData.map((rating) =>
       rating.get({ plain: true }))
       console.log(ratings)

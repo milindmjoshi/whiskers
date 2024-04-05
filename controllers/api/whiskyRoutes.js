@@ -85,7 +85,7 @@ router.get('/', async (req, res) => {
 
 
 })
-// Search whiskey by id
+// Search whiskey image by id
 // http://localhost:3001/api/whiskeys/15
 
 router.get('/:id', async (req, res) => {
@@ -137,7 +137,7 @@ router.get('/:id', async (req, res) => {
 })
 
 // Search whiskey by name
-// http://localhost:3001/api/whiskeys/John
+// http://localhost:3001/api/whiskeys/name/John
 
 router.get('/name/:name', async (req, res) => {
   //TODO - Add auth
