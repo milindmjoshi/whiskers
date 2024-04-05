@@ -13,7 +13,7 @@
     "averageRating": "4",
     "date_created": "2023-04-02T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "jameson-irish.jpg"
+    "file_name": "jameson.jpeg"
   },
   {
     "name": "Johnnie Walker",
@@ -21,7 +21,7 @@
     "averageRating": "4",
     "date_created": "2023-04-03T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "johnnie-walker-double-black.jpg"
+    "file_name": "johnnie-walker.jpg"
   },
   {
     "name": "Maker's Mark",
@@ -29,7 +29,7 @@
     "averageRating": "4",
     "date_created": "2023-04-04T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "makers-mark.jpeg"
   },
   {
     "name": "Glenfiddich",
@@ -37,7 +37,7 @@
     "averageRating": "4",
     "date_created": "2023-04-05T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "glenfiddich.jpg"
   },
   {
     "name": "Lagavulin",
@@ -45,7 +45,7 @@
     "averageRating": "4",
     "date_created": "2023-04-06T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "lagavulin.jpeg"
   },
   {
     "name": "Bushmills",
@@ -53,7 +53,7 @@
     "averageRating": "4",
     "date_created": "2023-04-07T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "bushmills.jpeg"
   },
   {
     "name": "Wild Turkey",
@@ -61,7 +61,7 @@
     "averageRating": "4",
     "date_created": "2023-04-08T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "wild-turkey.jpeg"
   },
   {
     "name": "Balvenie",
@@ -69,7 +69,7 @@
     "averageRating": "4",
     "date_created": "2023-04-09T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "balvenie.jpeg"
   },
   {
     "name": "Ardbeg",
@@ -77,7 +77,7 @@
     "averageRating": "4",
     "date_created": "2023-04-10T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "ardbeg.jpg"
   },
   {
     "name": "Laphroaig",
@@ -85,7 +85,7 @@
     "averageRating": "4",
     "date_created": "2023-04-11T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "laphroaig.jpeg"
   },
   {
     "name": "Talisker",
@@ -93,7 +93,7 @@
     "averageRating": "4",
     "date_created": "2023-04-12T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "talisker.jpeg"
   },
   {
     "name": "Chivas Regal",
@@ -101,7 +101,7 @@
     "averageRating": "4",
     "date_created": "2023-04-13T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "chivas-regal-25.jpg"
+    "file_name": "Chivas-Regal.png"
   },
   {
     "name": "Glenlivet",
@@ -109,7 +109,7 @@
     "averageRating": "4",
     "date_created": "2023-04-14T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "glenlivet.jpeg"
   },
   {
     "name": "Four Roses",
@@ -141,7 +141,7 @@
     "averageRating": "4",
     "date_created": "2023-04-18T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Knob Creek.jpeg"
+    "file_name": "knob-creek.jpeg"
   },
   {
     "name": "Pappy Van Winkle's Family Reserve",
@@ -157,7 +157,7 @@
     "averageRating": "4",
     "date_created": "2023-04-20T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Highland Park.jpeg"
+    "file_name": "highland-park.png"
   },
   {
     "name": "Old Forester",
@@ -173,7 +173,7 @@
     "averageRating": "5",
     "date_created": "2023-04-22T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Macallan.jpegconnemara"
+    "file_name": "Macallan.jpeg"
   },
   {
     "name": "Dalmore",
@@ -197,7 +197,7 @@
     "averageRating": "4",
     "date_created": "2023-04-25T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Glenmorangie.jpeg"
+    "file_name": "glenmorangie.jpeg"
   },
   {
     "name": "Oban",
@@ -245,7 +245,7 @@
     "averageRating": "5",
     "date_created": "2023-05-01T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "suntory-yamazaki.jpg"
   },
   {
     "name": "Nikka Taketsuru Pure Malt",
@@ -253,7 +253,7 @@
     "averageRating": "4",
     "date_created": "2023-05-02T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "nikka-taketsuru.jpeg"
   },
   {
     "name": "Hibiki Harmony",
@@ -261,7 +261,7 @@
     "averageRating": "5",
     "date_created": "2023-05-03T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "hibiki-harmony.jpg"
   },
   {
     "name": "GlenDronach",
@@ -269,7 +269,7 @@
     "averageRating": "4",
     "date_created": "2023-05-04T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "glendronach.jpeg"
   },
   {
     "name": "Springbank",
@@ -277,7 +277,7 @@
     "averageRating": "4",
     "date_created": "2023-05-05T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "springbank.jpg"
   },
   {
     "name": "Bruichladdich",
@@ -285,7 +285,7 @@
     "averageRating": "4",
     "date_created": "2023-05-06T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "bruichladdich.jpeg"
   },
   {
     "name": "Redbreast",
@@ -293,7 +293,7 @@
     "averageRating": "5",
     "date_created": "2023-05-07T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "redbreast.jpg"
   },
   {
     "name": "Tullamore D.E.W.",
@@ -301,7 +301,7 @@
     "averageRating": "4",
     "date_created": "2023-05-08T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "tullamore.jpeg"
   },
   {
     "name": "Powers",
@@ -309,7 +309,7 @@
     "averageRating": "4",
     "date_created": "2023-05-09T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "powers.png"
   },
   {
     "name": "Connemara",
@@ -317,7 +317,7 @@
     "averageRating": "4",
     "date_created": "2023-05-10T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "connemara.jpg"
   },
   {
     "name": "The Irishman",
@@ -325,7 +325,7 @@
     "averageRating": "4",
     "date_created": "2023-05-11T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "the-irishman.png"
   },
   {
     "name": "Green Spot",
@@ -333,7 +333,7 @@
     "averageRating": "4",
     "date_created": "2023-05-12T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "green-spot.png"
   },
   {
     "name": "Yellow Spot",
@@ -341,7 +341,7 @@
     "averageRating": "5",
     "date_created": "2023-05-13T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "yellow-spot.jpeg"
   },
   {
     "name": "Midleton Very Rare",
@@ -349,7 +349,7 @@
     "averageRating": "5",
     "date_created": "2023-05-14T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "middleton-very-rare.jpeg"
   },
   {
     "name": "Bushmills Black Bush",
@@ -357,7 +357,7 @@
     "averageRating": "4",
     "date_created": "2023-05-15T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "bushmills black bush.jpeg"
   },
   {
     "name": "Sexton",
@@ -365,7 +365,7 @@
     "averageRating": "4",
     "date_created": "2023-05-16T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "sexton.jpg"
   },
   {
     "name": "Glen Scotia",
@@ -373,7 +373,7 @@
     "averageRating": "4",
     "date_created": "2023-05-17T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "glen-scotia.png"
   },
   {
     "name": "Mortlach",
@@ -381,7 +381,7 @@
     "averageRating": "5",
     "date_created": "2023-05-18T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "mortlach.jpg"
   },
   {
     "name": "Craigellachie",
@@ -389,7 +389,7 @@
     "averageRating": "4",
     "date_created": "2023-05-19T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "craigellachie.png"
   },
   {
     "name": "Aberlour",
@@ -397,6 +397,6 @@
     "averageRating": "4",
     "date_created": "2023-05-20T00:00:00.000Z",
     "adminId": 1,
-    "file_name": "Bulleit.jpg"
+    "file_name": "aberlour.jpg"
   }
 ]
