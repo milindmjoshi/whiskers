@@ -166,11 +166,18 @@ body {
     align-items: center;
 }
 
-
-input[type="text"].whisky-search {
+.whisky-search{
     width: 12em;
     height: 2em;
+    float: right; 
+    margin-right: 10px;
 }
+
+/* input[type="text"].whisky-search {
+    width: 12em;
+    height: 2em;
+    float: right;
+} */
 
 
 
