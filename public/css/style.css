@@ -236,21 +236,6 @@ body {
 .img-container {
     display: flex;
     justify-content: center;
-    align-items: end;
-    margin-top: 1em;
-}
-
-.whiskey-card {
-    height: 500px;
-    width: 320px;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 8px solid #ffffff;
-    position: relative;
-
-    align-items: center;
-
-
 }
 
 .card-img-top {
