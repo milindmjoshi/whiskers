@@ -296,6 +296,11 @@ body {
     font-family: "Average", sans-serif;
 }
 
+.add-rating-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
 /* .list-group-item {
     display: flex;
     flex-direction: column;
