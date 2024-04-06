@@ -151,9 +151,12 @@ router.get('/admin', (req, res) => {
 });
 
 router.get('/search-results', (req, res) => {
-
-
-  res.render('search-results');
+  const searchTerm = req.query.search; 
+  res.render('search-results-whiskeys', {
+      search: searchTerm,
+      logged_in: true
+  });
 });
+
 
 module.exports = router;
