@@ -8,8 +8,9 @@ const Sequelize = require('sequelize');
 
 // Object for whiskey data avg rating and comments
 class WhiskeyData {
-  constructor(name, avgRating, comments, id) {
+  constructor(name, description, avgRating, comments, id) {
     this.name = name;
+    this.description = description;
     this.avgRating = avgRating;
     this.comments = comments;
     this.id = id;
@@ -31,7 +32,7 @@ function getWhiskySummaryData(whiskey) {
   if (ratingCount > 0) {
     avgRating = (ratingTotal / ratingCount).toFixed(2);
   }
-  whiskeyData = new WhiskeyData(whiskey.name, avgRating, comments, whiskey.id);
+  whiskeyData = new WhiskeyData(whiskey.name, whiskey.description, avgRating, comments, whiskey.id);
   console.log("Whiskey data summary: " + JSON.stringify(whiskeyData));
   return whiskeyData;
 }
