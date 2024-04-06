@@ -12,8 +12,8 @@
       </section>
       {{/each}}!
     </h2> --}}
-    <input class="whisky-search" type="text" placeholder="search whiskeys">
   </div>
+  <input class="whisky-search" type="text" placeholder="search whiskeys">
 </div>
 {{!-- {{ratings}} --}}
 
@@ -36,13 +36,14 @@
         <h2 class="whisky-feed-title">Whisky Feed</h2>
       </div>
       <div class="my-whisky-feed-content-container">
-        {{> whisky-feed }}
+     {{!-- dynamic html from profile.js --}}
       </div>
     </div>
   </div>
 </div>
 <script>
   const userId = "{{id}}";
+  const whiskeyId = "{{whiskyId}}";
 </script>
 
 <script src="./js/profile.js"></script>

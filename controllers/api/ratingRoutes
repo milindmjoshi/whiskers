@@ -125,10 +125,29 @@ router.post('/', async (req, res) => {
   //   "comment": "Not so good",
   // }
   try {
-    const rating = await Rating.create({...req.body});
+
+    // First check if the rating exists
+    console.log("incoming body" + JSON.stringify(req.body));
+     
+    // If the object already exists , created will be false
+    const rating = await Rating.findOne({where : { userId: req.body.userId, whiskyId: req.body.whiskyId }});
+    console.log("rating" + rating);
+    
     if (rating){
+      // if rating exists than do an update instead of insert
+      const ratingUpdatedData = await rating.update({ rating:  req.body.rating, comment: req.body.comment });
+      if (ratingUpdatedData){
+        console.log("Rating updated");
+        res.status(200).json(JSON.stringify(ratingUpdatedData));
+      }
+    }
+     else {
+      // create rating if it doesn't exist
+     const newRating = await Rating.create({...req.body});
+      if (newRating){
         console.log("Rating created");
-        res.status(200).json(JSON.stringify(rating));
+         res.status(200).json(JSON.stringify(newRating));
+     }
     }
 
   } catch (err) {

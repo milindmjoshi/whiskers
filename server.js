@@ -19,7 +19,16 @@ const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
-hbs.handlebars.registerPartial('nav', fs.readFileSync(__dirname + '/views/partials/whisky-card.handlebars', 'utf8'));
+
+
+hbs.handlebars.registerPartial(
+  'whisky-card',
+  fs.readFileSync(__dirname + '/views/partials/whisky-card.handlebars', 'utf8')
+);
+hbs.handlebars.registerPartial(
+  'whisky-feed',
+  fs.readFileSync(__dirname + '/views/partials/whisky-feed.handlebars', 'utf8')
+);
 hbs.handlebars.registerPartial('whiskeyCardPartial', fs.readFileSync(__dirname + '/views/partials/whiskeyCardPartial.handlebars', 'utf-8'));
 
 
@@ -41,7 +50,7 @@ const sess = {
 app.use(session(sess));
 
 // Used to upload whisky image files
-app.use(fileUpload()); 
+app.use(fileUpload());
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);

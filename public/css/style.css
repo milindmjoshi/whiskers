@@ -34,7 +34,7 @@ body {
 
 .above-title,
 .above-form {
-    height: 20em;
+    height: 15em;
 }
 
 .title-container {
@@ -166,11 +166,18 @@ body {
     align-items: center;
 }
 
-
-input[type="text"].whisky-search {
+.whisky-search{
     width: 12em;
     height: 2em;
+    float: right; 
+    margin-right: 10px;
 }
+
+/* input[type="text"].whisky-search {
+    width: 12em;
+    height: 2em;
+    float: right;
+} */
 
 
 
@@ -184,6 +191,7 @@ input[type="text"].whisky-search {
 .my-whiskys-container,
 .whisky-feed-container {
     display: flex;
+  
     flex-direction: column;
     background-color: rgba(171, 171, 171, 0.3);
     ;
@@ -208,7 +216,8 @@ input[type="text"].whisky-search {
     font-size: 4em;
 }
 
-.my-whiskys-content-container {
+.my-whiskys-content-container,
+.my-whisky-feed-content-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -218,34 +227,16 @@ input[type="text"].whisky-search {
     overflow-y: auto;
 }
 
-.my-whisky-feed-content-container {
-    display: flex;
-    justify-content: center;
-}
-
 .card {
     width: 50%;
     margin: 1em;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
 }
 
 .img-container {
     display: flex;
     justify-content: center;
     align-items: end;
-
-}
-
-.whiskey-card {
-    height: 500px;
-    width: 320px;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 8px solid #ffffff;
-    position: relative;
-
-    align-items: center;
-
-
 }
 
 .card-img-top {
@@ -253,10 +244,18 @@ input[type="text"].whisky-search {
     width: 12em;
 }
 
+.whiskey-feed-card-header {
+    display: flex;
+    flex-direction: row;
+
+}
+
 .card-header {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: flex-start; */
+    margin: 0em;
+    padding: 0em;
 }
 
 .search-title,
@@ -271,13 +270,23 @@ input[type="text"].whisky-search {
     font-family: "Oswald", sans-serif;
 }
 
+.feed-whiskey-name {
+    font-family: "Average", sans-serif;
+}
+
 .comment-section {
     max-height: 4em;
+    overflow-y: auto;
 }
 
 .comment-text {
     font-size: 1em;
     font-family: "Average", sans-serif;
+}
+
+.add-rating-section {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* .list-group-item {
