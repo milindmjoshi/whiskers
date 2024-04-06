@@ -153,3 +153,14 @@ router.get('/search-results', (req, res) => {
 });
 
 module.exports = router;
+
+// app.get('/views/whiskeyCardPartials.hbs', (req, res) => {
+//   res.render('main', {
+//     // main is your main handlebars file
+//     image: '/path/to/image.jpg',
+//     name: 'Whiskey Name',
+//     description: 'A fine whiskey.',
+//     stars: [1, 2, 3, 4, 5],
+//     logged_in: req.session.logged_in // or however you're handling sessions
+//   });
+// });

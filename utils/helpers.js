@@ -20,3 +20,6 @@ module.exports = {
     }
   },
 };
+
+// ExpressHandlebars.registerPartial(whiskeyCardPartial, $("#whiskeyCard").html)
+// hbs.registerPartial('whiskeyCardPartial', '{{whiskeyCard}}');
