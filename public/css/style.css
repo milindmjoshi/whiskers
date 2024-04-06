@@ -68,14 +68,20 @@ body {
 }
 
 .login-container,
-.form-container {
+.form-container,
+.search-title {
     display: flex;
     justify-content: center;
 }
 
+<<<<<<< Updated upstream
 
 .search-results,
 .form-container {
+=======
+.form-container,
+.search-results {
+>>>>>>> Stashed changes
     flex-direction: column;
     align-items: center;
 }
@@ -115,8 +121,14 @@ input[type="password"] {
     display: flex;
     justify-content: center;
     padding-bottom: 40vh;
+<<<<<<< Updated upstream
     height: 100vh;
     width: 100%;
+=======
+    align-items: center;
+    height: 100vh; 
+    width: 100%; 
+>>>>>>> Stashed changes
 }
 
 .search-results,
@@ -125,14 +137,24 @@ input[type="password"] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+<<<<<<< Updated upstream
     width: auto;
+=======
+    width: auto; 
+>>>>>>> Stashed changes
 }
 
 .search-container {
     max-width: 100%;
+<<<<<<< Updated upstream
 }
 
 .whiskey-card {
+=======
+  }
+  
+.card {
+>>>>>>> Stashed changes
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -142,6 +164,7 @@ input[type="password"] {
     font-size: 20px;
     color: var(--secondary-color);
 }
+<<<<<<< Updated upstream
 
 html,
 body {
@@ -260,10 +283,20 @@ body {
 
 .search-title,
 .search-container {
+=======
+  
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .card-container {
+>>>>>>> Stashed changes
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+<<<<<<< Updated upstream
 }
 
 .card-title {
@@ -293,3 +326,6 @@ body {
     display: flex;
     flex-direction: column;
 } */
+=======
+  }
+>>>>>>> Stashed changes
