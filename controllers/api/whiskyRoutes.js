@@ -67,6 +67,34 @@ router.get('/averages', async (req, res) => {
 
 })
 
+// Get searched whiskeys with avg rating
+router.get('/averages/search/:name', async (req, res) => {
+  //TODO - Add auth
+  let whiskyName = req.params.name;
+  console.log("Search for " + whiskyName);
+  let whiskeyDataSummary = new Array();
+  try {
+    const allWhiskyData = await Whisky.findAll({ where: { name: { [Sequelize.Op.like]: whiskyName + "%" } }, 
+      // This will retrieve every Whisky's associated Rating data.  
+      include: [{ model: Rating }],
+    } );
+    if (allWhiskyData) {
+      allWhiskyData.forEach((whiskey) => {
+        whiskeyDataSummary.push(getWhiskySummaryData(whiskey));
+      })
+    }
+
+    res.status(200).json(whiskeyDataSummary);
+     
+  }
+  catch (error) {
+    console.log(error);
+    res.status(500).send("Error retrieving whisky data summary");
+  }
+
+})
+
+
 // Get all whiskeys
 router.get('/', async (req, res) => {
   //TODO - Add auth
