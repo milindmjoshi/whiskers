@@ -17,10 +17,10 @@ async function handleWhiskySearch() {
             if (response.ok) {
                 const whiskeyDataSummary = await response.json();
                 console.log("Search Results:", whiskeyDataSummary);
-                const backToProfileLink = document.querySelector('.back-to-profile');
-                if (backToProfileLink) {
-                    backToProfileLink.classList.remove('hidden');
-                }
+                // const backToProfileLink = document.querySelector('.back-to-profile');
+                // if (backToProfileLink) {
+                //     backToProfileLink.classList.remove('hidden');
+                // }
 
 
                 if (whiskeyDataSummary.length === 0) {
@@ -65,6 +65,9 @@ async function handleWhiskySearch() {
                     
                     <button class="add-rating-button btn" data-whiskey-id="${whiskey.id}">+</button>
     
+                    </div>
+                    <div class="description-section">
+                    <h5 class="card-title search-whiskey-description">Description: "${whiskey.description}"</h5>
                     </div>
                     </div>
                     <h5 class="card-title">Comments:</h5>
