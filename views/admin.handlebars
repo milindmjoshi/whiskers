@@ -1,7 +1,13 @@
+{{#if message}}
+<div id="msg" class="alert alert-success msg-width" role="alert">
+  {{ message }}
+</div>
+<br>
+{{/if}}
 <div class="row login-container">
-  <div class="row above-form"></div>
+  <div class="row above-form">
   <div class="col-md-6 form-container">
-        <h2 class="admin-title">Add Whiskeys (Admin Only)</h2>
+        <h2 class="admin-title">Add Whiskey(Admin Only)</h2>
         <h5 class="admin-description">Enter a whisky name, description, and select a file to upload</h5>
     <form ref='uploadForm' 
           id='uploadForm' 
@@ -9,15 +15,15 @@
           method='post' 
           encType="multipart/form-data">
         
+        <br>
         <label for="name" class="admin-description">Whisky Name:</label>
+        <br>
         <input type="text" name="name" >
         <br>
-        <br>
         <label for="description" class="admin-description">Description:</label>
-        <input type="text" name="description">
+         <br>
+        <textarea name="description" rows="2" cols="50"></textarea>
         <br>
-        <br>
-        {{!-- <input type="file" name="imageFile" class="admin-description"/> --}}
         <div class="mb-3">
           <label for="formFile" class="admin-description">Select whiskey image file to upload</label>
           <input class="form-control" type="file" id="formFile" name="imageFile">
@@ -29,47 +35,13 @@
         </form>     
   </div>
 </div>
-
-
-
-
-{{!-- <div class="container-fluid profile-container">
-  <div class="row">
-
-    <div class="my-whiskys-container col-12 col-sm-6">
-      <div class="my-whiskys-title-container">
-        <h2 class="my-whiskys-title">Add Whiskeys (Admin Only)</h2>
-        <h3 class="my-whiskys-title">Enter a whisky name, description, and select a file to upload</h3>
-      </div>
-      <div class="my-whiskys-content-container">
-       <form ref='uploadForm' 
-          id='uploadForm' 
-          action='http://localhost:3001/api/whiskeys' 
-          method='post' 
-          encType="multipart/form-data">
-        
-        <label for="name">Whisky Name:</label>
-        <input type="text" name="name" >
-        <br>
-        <br>
-        <label for="description">Description:</label>
-        <input type="text" name="description">
-        <br>
-        <br>
-        <input type="file" name="imageFile" />
-        <br>
-        <br>
-        <input type='submit' value='Upload!' />
-        <input type="hidden" name="adminId" value="1">
-        
-       
-        </form>     
-      </div>
-    </div>
-     
-  </div>
 </div>
+<script> 
+    //Hide the message element after 3 seconds if it exists
+    let messageElement = document.getElementById("msg");
+    if (messageElement){
+      setTimeout(function(){ 
+        messageElement.style.display = "none"},2000);
+    }
+</script>
  
-    
-
-    <script src="/models/Admin.js"></script> --}}
