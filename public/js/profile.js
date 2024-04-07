@@ -390,7 +390,9 @@ async function getFeedWhiskeys() {
 
 async function removeRating(ratingId) {
     // Display confirmation dialog
-    const isConfirmed = confirm("Are you sure you want to delete this rating?");
+    //const isConfirmed = confirm("Are you sure you want to delete this rating?");
+    const isConfirmed = true;
+    
     if (isConfirmed) {
         try {
             const response = await fetch(`/api/ratings/${ratingId}`, {
