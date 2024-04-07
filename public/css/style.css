@@ -289,6 +289,18 @@ body {
     justify-content: space-between;
 }
 
+/* Ensure carousel images and items don't take up whole screen */
+ .carousel-width{
+    width: 700px;
+    margin: auto;
+} 
+ .carousel-inner > .carousel-item > img {
+    width:600px;
+    height:400px;
+    margin: auto;
+  } 
+  
+
 /* .list-group-item {
     display: flex;
     flex-direction: column;
