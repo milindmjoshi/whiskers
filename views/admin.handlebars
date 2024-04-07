@@ -1,11 +1,52 @@
-<div class="container">
-    <h1>Whiskers Add Whisky Test Page with File Upload</h1>
-    <h3>Enter a whisky name, description, and select a file to upload</h3>
+<div class="row login-container">
+  <div class="row above-form"></div>
+  <div class="col-md-6 form-container">
+        <h2 class="admin-title">Add Whiskeys (Admin Only)</h2>
+        <h5 class="admin-description">Enter a whisky name, description, and select a file to upload</h5>
     <form ref='uploadForm' 
-      id='uploadForm' 
-      action='http://localhost:3001/api/whiskeys' 
-      method='post' 
-      encType="multipart/form-data">
+          id='uploadForm' 
+          action='http://localhost:3001/api/whiskeys' 
+          method='post' 
+          encType="multipart/form-data">
+        
+        <label for="name" class="admin-description">Whisky Name:</label>
+        <input type="text" name="name" >
+        <br>
+        <br>
+        <label for="description" class="admin-description">Description:</label>
+        <input type="text" name="description">
+        <br>
+        <br>
+        {{!-- <input type="file" name="imageFile" class="admin-description"/> --}}
+        <div class="mb-3">
+          <label for="formFile" class="admin-description">Select whiskey image file to upload</label>
+          <input class="form-control" type="file" id="formFile" name="imageFile">
+        </div>
+        <br>
+        <br>
+        <input type='submit' class="btn btn-secondary" value='Submit' />
+        <input type="hidden" name="adminId" value="1">
+        </form>     
+  </div>
+</div>
+
+
+
+
+{{!-- <div class="container-fluid profile-container">
+  <div class="row">
+
+    <div class="my-whiskys-container col-12 col-sm-6">
+      <div class="my-whiskys-title-container">
+        <h2 class="my-whiskys-title">Add Whiskeys (Admin Only)</h2>
+        <h3 class="my-whiskys-title">Enter a whisky name, description, and select a file to upload</h3>
+      </div>
+      <div class="my-whiskys-content-container">
+       <form ref='uploadForm' 
+          id='uploadForm' 
+          action='http://localhost:3001/api/whiskeys' 
+          method='post' 
+          encType="multipart/form-data">
         
         <label for="name">Whisky Name:</label>
         <input type="text" name="name" >
@@ -23,6 +64,12 @@
         
        
         </form>     
-
-    <script src="/models/Admin.js"></script>
+      </div>
+    </div>
+     
+  </div>
 </div>
+ 
+    
+
+    <script src="/models/Admin.js"></script> --}}
