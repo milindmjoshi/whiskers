@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User, Admin, Rating, Whisky } = require('../models');
 const withAuth = require('../utils/auth');
+require('dotenv').config();
+
 
 router.get('/', (req, res) => {
   try {
@@ -14,6 +16,42 @@ router.get('/', (req, res) => {
   }
 });
 
+// Get all whiskeys news
+router.get('/news', async (req, res) => {
+  console.log("** Getting  NEWS");
+  try{
+    const NewsAPI = require('newsapi');
+    const newsapi = new NewsAPI(process.env.NEWS_API_KEY);
+    date = new Date()
+    date.setMonth(date.getMonth() - 1);
+     // To query /v2/top-headlines
+    // All options passed to topHeadlines are optional, but you need to include at least one of them
+    newsapi.v2.everything({
+      //sources: 'bbc-news,the-verge',
+      q: 'whiskey',
+      searchIn: 'title',
+      language: 'en',
+      sortBy: 'relevancy',
+      from: date
+    }).then(response => {
+       console.log(JSON.stringify(response));
+       //let news = JSON.stringify(response);
+       console.log(response.status);
+       console.log("**RENDERING NEWS");
+       return res.render('news',{
+        data: response,
+        logged_in: true,
+
+       });
+    })
+    
+  }
+    catch (error) {
+      console.log(error);
+      res.status(500).send("Error retrieving whisky news ");
+    }
+  
+})
 
 // router.get('/project/:id', async (req, res) => {
 //   try {

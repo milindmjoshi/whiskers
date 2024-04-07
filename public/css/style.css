@@ -289,6 +289,32 @@ body {
     justify-content: space-between;
 }
 
+/* Ensure carousel images and items don't take up whole screen */
+ .carousel-width{
+    width: 700px;
+    margin: auto;
+} 
+ .carousel-inner > .carousel-item > img {
+    width:600px;
+    height:400px;
+    margin: auto;
+  } 
+
+  /* CSS for admin page */
+  profile-name,
+.admin-title {
+    font-family: "Oswald", sans-serif;
+    color: var(--primary-color);
+    font-weight: 200;
+    font-size: 4em;
+}
+
+.admin-description {
+    font-family: "Oswald", sans-serif;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
 /* .list-group-item {
     display: flex;
     flex-direction: column;

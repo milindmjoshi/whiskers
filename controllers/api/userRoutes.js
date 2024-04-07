@@ -146,7 +146,7 @@ POST http://localhost:3001/api/users/logout
 */
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
-    console.log("User Logging out: " + JSON.stringify(req.session));
+    console.log("*** User Logging out: " + JSON.stringify(req.session));
     req.session.destroy(() => {
       res.status(204).end();
     });
