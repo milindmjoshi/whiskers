@@ -68,7 +68,7 @@
 
 //                     whiskeyElement.innerHTML = `
 //                      <div class="img-container">
-    
+
 //                         <img class="card-img-top" src="http://localhost:3001/api/whiskeys/${whiskey.id}" alt="Card image cap"> 
 //                     </div>
 //                     <div class="card-body">
@@ -76,16 +76,16 @@
 //                     <h5 class="card-title feed-whiskey-name">${whiskey.name}</h5>
 //                     <div class="add-rating-section">
 //                     <h5 class="card-title">Average Rating: ${whiskey.avgRating}</h5>
-                    
+
 //                     <button class="add-rating-button btn btn-primary" data-whiskey-id="${whiskey.id}">+</button>
-    
+
 //                     </div>
 //                     </div>
 //                     <h5 class="card-title">Comments:</h5>
 //                     <div class="comment-section">
-                        
+
 //                         <div>${commentsHTML}</div>
-                       
+
 //                        </div>
 //                     </div>
 //                 `;
@@ -255,11 +255,12 @@ async function getFeedWhiskeys() {
                     </div>
                     <div class="card-body">
                     <div class="card-header">
-                    <h5 class="card-title feed-whiskey-name">${whiskey.name}</h5>
+                    <h5 class="card-title feed-whiskey-name m-0">${whiskey.name}</h5>
                     <div class="add-rating-section">
-                    <h5 class="card-title">Average Rating: ${whiskey.avgRating}</h5>
+                    <h5 class="card-title average-rating-title-feed m-0">Average Rating: ${whiskey.avgRating}</h5>
                     
-                    <button class="add-rating-button btn btn-primary" data-whiskey-id="${whiskey.id}">+</button>
+                    <button class="add-rating-button btn" data-whiskey-id="${whiskey.id}">+</button>
+                    
     
                     </div>
                     </div>
@@ -387,6 +388,31 @@ async function getFeedWhiskeys() {
 
 
 
+async function removeRating(ratingId) {
+    // Display confirmation dialog
+    const isConfirmed = confirm("Are you sure you want to delete this rating?");
+    if (isConfirmed) {
+        try {
+            const response = await fetch(`/api/ratings/${ratingId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (response.ok) {
+                console.log('Rating deleted successfully');
+                window.location.reload();
+            } else {
+                console.error('Failed to delete rating');
+            }
+        } catch (error) {
+            console.error('Error deleting rating:', error);
+        }
+    } else {
+        console.log('Rating deletion cancelled.'); // Optionally, log cancellation
+    }
+}
 
 
 
@@ -398,7 +424,7 @@ async function getFeedWhiskeys() {
 document.querySelector('.whisky-search').addEventListener('keypress', function (event) {
     const searchTerm = document.querySelector('.whisky-search').value.trim();
     if (event.key === 'Enter' && searchTerm) {
-       window.location.href = `/search-results?search=${encodeURIComponent(searchTerm)}`;
+        window.location.href = `/search-results?search=${encodeURIComponent(searchTerm)}&userId=${userId}`;
     }
 });
 
