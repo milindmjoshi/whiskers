@@ -9,7 +9,7 @@
     {{#each data.articles}}
       <div class="carousel-item {{#if @first }}active {{/if}} ">
         <img src="{{ urlToImage}}" class="d-block w-100" alt="whisky image">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption d-none d-md-block carousel-title-color">
           <h5>{{title}}</h5>
           <p>{{description}}.</p>
           <a href="{{url}}" target="_blank">{{url}} </a>
