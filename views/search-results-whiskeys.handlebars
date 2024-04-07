@@ -1,10 +1,10 @@
-<div class="row login-container">
+<div class="container login-container">
   <div class="row search-container">
-    <div class="col-md-6">
+    <div class="col">
       <h1 class="search-title">Search Results</h1>
     </div>
   </div>
-  <div class="my-search-results-container">
+  <div class="my-search-results-container row">
     {{!-- <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card-container">
@@ -37,7 +37,11 @@
 </div>
 <script>
   const searchTerm = "{{search}}";
-
+  const userId = "{{userId}}";
+  const whiskeyId = "{{whiskyId}}";
+  console.log("***Search term is:" + searchTerm)
+  console.log("***userID is:" + userId)
+  console.log("***WhiskeyID is:" + whiskeyId)
 </script>
 
 <script src="./js/search-results.js"></script>

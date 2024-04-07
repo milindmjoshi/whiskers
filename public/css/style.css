@@ -132,6 +132,17 @@ input[type="password"] {
     max-width: 100%;
 }
 
+.my-search-results-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* .search-results-card {
+    max-width: 25%;
+} */
+
 .whiskey-card {
     display: flex;
     flex-direction: column;
@@ -166,10 +177,10 @@ body {
     align-items: center;
 }
 
-.whisky-search{
+.whisky-search {
     width: 12em;
     height: 2em;
-    float: right; 
+    float: right;
     margin-right: 10px;
 }
 
@@ -191,7 +202,7 @@ body {
 .my-whiskys-container,
 .whisky-feed-container {
     display: flex;
-  
+
     flex-direction: column;
     background-color: rgba(171, 171, 171, 0.3);
     ;
@@ -244,6 +255,16 @@ body {
     width: 12em;
 }
 
+.my-rating-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.trashcan {
+    font-size: 1.5em;
+}
+
 .whiskey-feed-card-header {
     display: flex;
     flex-direction: row;
@@ -264,6 +285,15 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.search-title,
+.no-search-results {
+    color: var(--primary-color);
+}
+
+.no-search-results {
+    font-size: 4em;
 }
 
 .card-title {
@@ -287,6 +317,16 @@ body {
 .add-rating-section {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.add-rating-button {
+    font-size: 1.5em;
+    /* margin-bottom: 0em; */
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 /* Ensure carousel images and items don't take up whole screen */

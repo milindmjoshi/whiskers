@@ -17,7 +17,27 @@ async function handleWhiskySearch() {
             if (response.ok) {
                 const whiskeyDataSummary = await response.json();
                 console.log("Search Results:", whiskeyDataSummary);
+                const backToProfileLink = document.querySelector('.back-to-profile');
+                if (backToProfileLink) {
+                    backToProfileLink.classList.remove('hidden');
+                }
+
+
+                if (whiskeyDataSummary.length === 0) {
+                    alert("No Search Results Were Found");
+                    // Optionally, you could also display this message directly in the page instead of using an alert
+                    const whiskeyFeedContainer = document.querySelector('.my-search-results-container');
+                    whiskeyFeedContainer.innerHTML = '<p class="no-search-results">No Search Results Were Found.</p>';
+                    return; // Exit the function early since there's no data to display
+                }
+
                 // Select the container
+                const profileElements = document.getElementsByClassName('back-to-profile');
+
+                for (let i = 0; i < profileElements.length; i++) {
+                    profileElements[i].classList.remove('hidden');
+                }
+
                 const whiskeyFeedContainer = document.querySelector('.my-search-results-container');
 
 
@@ -27,7 +47,7 @@ async function handleWhiskySearch() {
                 // Iterate over the whiskey data and create HTML for each
                 whiskeyDataSummary.forEach(whiskey => {
                     const whiskeyElement = document.createElement('div');
-                    whiskeyElement.classList.add('card');
+                    whiskeyElement.classList.add('card', 'search-results-card');
 
                     // Handle multiple comments
                     const commentsHTML = whiskey.comments.map(comment => `<p class="comment-text border">${comment}</p>`).join('');
@@ -43,7 +63,7 @@ async function handleWhiskySearch() {
                     <div class="add-rating-section">
                     <h5 class="card-title">Average Rating: ${whiskey.avgRating}</h5>
                     
-                    <button class="add-rating-button btn btn-primary" data-whiskey-id="${whiskey.id}">+</button>
+                    <button class="add-rating-button btn" data-whiskey-id="${whiskey.id}">+</button>
     
                     </div>
                     </div>

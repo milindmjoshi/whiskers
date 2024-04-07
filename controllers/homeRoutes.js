@@ -6,9 +6,7 @@ require('dotenv').config();
 
 router.get('/', (req, res) => {
   try {
-    // Render the homepage template without dynamic data
     res.render('homepage', {
-      // You can still pass the logged_in status if your layout requires it
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -92,13 +90,14 @@ router.get('/profile', withAuth, async (req, res) => {
       userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
       })
-      whiskeyRatingsData = await Rating.findAll({ where: { user_id: userData.id } ,
-          // This will retrieve every ratings associated Whisky data.  
-          include: [{ model: Whisky }],
+      whiskeyRatingsData = await Rating.findAll({
+        where: { user_id: userData.id },
+        // This will retrieve every ratings associated Whisky data.  
+        include: [{ model: Whisky }],
       });
       console.log("Rating With Whiskey Name" + JSON.stringify(whiskeyRatingsData));
       ratings = whiskeyRatingsData.map((rating) =>
-      rating.get({ plain: true }))
+        rating.get({ plain: true }))
       console.log(ratings)
     };
 
@@ -189,10 +188,13 @@ router.get('/admin', (req, res) => {
 });
 
 router.get('/search-results', (req, res) => {
-  const searchTerm = req.query.search; 
+  const searchTerm = req.query.search;
+  const userIdTerm = req.query.userId;
+  console.log("Home Routes UserID"+ userIdTerm)
   res.render('search-results-whiskeys', {
-      search: searchTerm,
-      logged_in: true
+    search: searchTerm,
+    userId: userIdTerm,
+    logged_in: true
   });
 });
 
