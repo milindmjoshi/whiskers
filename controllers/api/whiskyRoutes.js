@@ -197,20 +197,7 @@ router.get('/name/:name', async (req, res) => {
     console.log(error);
     res.status(500).send("Error searching whikey by name");
   }
-  // switch(whisky) {
-  //   case 'chivas-12': 
-  //         res.sendFile(path.join(__dirname, '../../public/assets/images/chivas-regal-12.jpg'));
-  //         break;
-  //   case 'chivas-18':
-  //         res.sendFile(path.join(__dirname,'../../public/assets/images/chivas-regal-18.jpg'));
-  //         break;
-  //   case  'chivas-25':
-  //         res.sendFile(path.join(__dirname,'../../public/assets/images/chivas-regal-25.jpg'));
-  //         break;
-  //   default:
-  //         console.log("Whisky not found:" + whisky);
-  //         res.status(404).send('Whisky Not Found: ' + whisky);     
-  // }
+   
 
 })
 
@@ -262,7 +249,10 @@ router.post('/', async (req, res) => {
       file_name: imageFile ? imageFile.name : null
     });
 
-    res.status(200).json(newWhiskey);
+    //res.status(200).json(newWhiskey);
+    res.render('admin',{
+      message: "Whisky Added"
+    });
   } catch (err) {
     console.log("Error creating new whiskey");
     console.log(err);
