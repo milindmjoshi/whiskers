@@ -3,14 +3,14 @@
   <div class="col-md-6 form-container">
     <h2 class="login-title">Login</h2>
 
-    <form class="form login-form">
+    <form class="form login-form" autocomplete="off">
       <div class="form-group email-field">
         {{!-- <label for="email-login">email:</label> --}}
-        <input class="form-input" type="text" placeholder="email" id="email-login" />
+        <input class="form-input" type="email" placeholder="email" id="email-login" required/>
       </div>
       <div class="form-group password-field">
         {{!-- <label for="password-login">password:</label> --}}
-        <input class="form-input" type="password" placeholder="password" id="password-login" />
+        <input class="form-input" type="password" placeholder="password" id="password-login" required />
       </div>
       <div class="form-group login-button-container">
         <button class="btn btn-secondary btn-lg" type="submit">login</button>

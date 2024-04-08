@@ -3,18 +3,18 @@
   <div class="col-md-6 form-container">
     <h2 class="signup-title">Sign Up</h2>
 
-    <form class="form signup-form">
+    <form class="form signup-form" autocomplete="off">
         <div class="form-group name-field">
         {{!-- <label for="email-login">email:</label> --}}
-        <input class="form-input" type="text" placeholder="full name" id="name-signup" />
+        <input class="form-input" type="text" placeholder="full name" id="name-signup" required/>
       </div>
       <div class="form-group email-field">
         {{!-- <label for="email-login">email:</label> --}}
-        <input class="form-input" type="text" placeholder="email" id="email-signup" />
+        <input class="form-input" type="email" placeholder="email" id="email-signup" required/>
       </div>
       <div class="form-group password-field">
         {{!-- <label for="password-login">password:</label> --}}
-        <input class="form-input" type="password" placeholder="password" id="password-signup" />
+        <input class="form-input" type="password" placeholder="password" id="password-signup" required />
       </div>
       <div class="form-group login-button-container">
         <button class="btn btn-secondary btn-lg" type="submit">create account</button>

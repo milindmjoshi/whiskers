@@ -99,6 +99,7 @@ body {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
     font-family: "Oswald", sans-serif;
     letter-spacing: .1em;
@@ -336,7 +337,7 @@ body {
 } 
 
 .carousel-title-color{
-    color: red;
+    color: gray;
 }
  .carousel-inner > .carousel-item > img {
     width:600px;
