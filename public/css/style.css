@@ -334,6 +334,10 @@ body {
     width: 700px;
     margin: auto;
 } 
+
+.carousel-title-color{
+    color: red;
+}
  .carousel-inner > .carousel-item > img {
     width:600px;
     height:400px;
