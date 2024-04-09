@@ -12,6 +12,6 @@ const logout = async () => {
   }
 };
 
-document.querySelectorAll('.logout, .navbar-brand').forEach(function(element) {
+document.querySelectorAll('.logout').forEach(function(element) {
   element.addEventListener('click', logout);
 });
