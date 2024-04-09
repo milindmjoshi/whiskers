@@ -38,7 +38,7 @@ function getWhiskySummaryData(whiskey) {
 }
 
 // Get all whiskeys with avg rating
-router.get('/averages', async (req, res) => {
+router.get('/averages', withAuth, async (req, res) => {
   //TODO - Add auth
   let whiskeyDataSummary = new Array();
   try {
@@ -68,7 +68,7 @@ router.get('/averages', async (req, res) => {
 })
 
 // Get searched whiskeys with avg rating
-router.get('/averages/search/:name', async (req, res) => {
+router.get('/averages/search/:name', withAuth,async (req, res) => {
   //TODO - Add auth
   let whiskyName = req.params.name;
   console.log("Search for " + whiskyName);
@@ -96,7 +96,7 @@ router.get('/averages/search/:name', async (req, res) => {
 
 
 // Get all whiskeys
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   //TODO - Add auth
   try {
     let whiskyData = await Whisky.findAll({
@@ -117,7 +117,7 @@ router.get('/', async (req, res) => {
 // Search whiskey image by id
 // http://localhost:3001/api/whiskeys/15
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   //TODO - Add auth
   let whiskeyId = req.params.id;
   console.log("Search for whiskey with id " + whiskeyId);
@@ -168,7 +168,7 @@ router.get('/:id', async (req, res) => {
 // Search whiskey by name
 // http://localhost:3001/api/whiskeys/name/John
 
-router.get('/name/:name', async (req, res) => {
+router.get('/name/:name', withAuth, async (req, res) => {
   //TODO - Add auth
   let whiskyName = req.params.name;
   console.log("Search for " + whiskyName);
@@ -204,7 +204,7 @@ router.get('/name/:name', async (req, res) => {
 // Add whiskey 
 //router.post('/', withAuth, async (req, res) => {
 // TODO. Add auth
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   // sample body (files is optional)
   // {
   //   "name" : "MJ Whiskey",
@@ -263,7 +263,7 @@ router.post('/', async (req, res) => {
 // Update  whiskey 
 //router.put('/', withAuth, async (req, res) => {
 // TODO. Add auth
-router.put('/', async (req, res) => {
+router.put('/', withAuth, async (req, res) => {
   // sample body
   // {
   //   "id" : 3
@@ -298,7 +298,7 @@ router.put('/', async (req, res) => {
 // http://localhost:3001/api/whiskeys/50 (DELETE)
 //router.delete('/:id', withAuth, async (req, res) => {
 //TODO - readd auth
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
 
   let whiskeyId = req.params.id;
   console.log("Deleting whiskey with id: " + whiskeyId);
