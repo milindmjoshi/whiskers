@@ -10,7 +10,7 @@
     <h3>Enter a whisky name, description, and select a file to upload</h3>
     <form ref='uploadForm' 
       id='uploadForm' 
-      action='http://localhost:3001/api/whiskeys' 
+      action='/api/whiskeys' 
       method='post' 
       encType="multipart/form-data">
         
@@ -36,8 +36,8 @@
     <script>
         // Test code to get a whiseky image in base64 from DB and 
         async function getWhiskeyImage() {
-            //const response = await fetch("http://localhost:3001/api/whiskeys/Oban%20Special");
-            const response = await fetch("http://localhost:3001/api/whiskeys/My Oban");
+            //const response = await fetch("/api/whiskeys/Oban%20Special");
+            const response = await fetch("/api/whiskeys/My Oban");
             let whiskey = await response.json();
             console.log(JSON.parse(whiskey));
             let whiskeyJSON = JSON.parse(whiskey);

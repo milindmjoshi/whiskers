@@ -55,7 +55,7 @@ async function handleWhiskySearch() {
                     whiskeyElement.innerHTML = `
                      <div class="img-container">
     
-                        <img class="card-img-top" src="http://localhost:3001/api/whiskeys/${whiskey.id}" alt="Card image cap"> 
+                        <img class="card-img-top" src="/api/whiskeys/${whiskey.id}" alt="Card image cap"> 
                     </div>
                     <div class="card-body">
                     <div class="card-header">
