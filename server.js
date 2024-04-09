@@ -24,10 +24,10 @@ hbs.handlebars.registerPartial(
   'whisky-card',
   fs.readFileSync(__dirname + '/views/partials/whisky-card.handlebars', 'utf8')
 );
-hbs.handlebars.registerPartial(
-  'whisky-feed',
-  fs.readFileSync(__dirname + '/views/partials/whisky-feed.handlebars', 'utf8')
-);
+// hbs.handlebars.registerPartial(
+//   'whisky-feed',
+//   fs.readFileSync(__dirname + '/views/partials/whisky-feed.handlebars', 'utf8')
+// );
 
 const sess = {
   secret: 'Super secret secret',
