@@ -251,7 +251,9 @@ router.post('/', withAuth, async (req, res) => {
 
     //res.status(200).json(newWhiskey);
     res.render('admin',{
-      message: "Whisky Added"
+      message: "Whisky Added",
+      logged_in: true,
+      isAdmin: true
     });
   } catch (err) {
     console.log("Error creating new whiskey");
