@@ -328,6 +328,7 @@ body {
 
 .hidden {
     visibility: hidden;
+
 }
 
 /* Ensure carousel images and items don't take up whole screen */
@@ -344,6 +345,7 @@ body {
     height:400px;
     margin: auto;
   } 
+
 
   /* CSS for admin page */
   profile-name,
@@ -363,6 +365,7 @@ body {
 .msg-width{
     width: 75%;
     margin: auto;
+
 }
 
 /* .list-group-item {
