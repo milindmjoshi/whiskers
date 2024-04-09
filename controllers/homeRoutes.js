@@ -86,7 +86,8 @@ router.get('/profile', withAuth, async (req, res) => {
     if (req.session.isAdmin) {
       res.render('admin', {
         ...user,
-        logged_in: true
+        logged_in: true,
+        isAdmin: true
       });
     }
     else {
