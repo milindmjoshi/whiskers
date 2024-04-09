@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 // Get all whiskeys news
-router.get('/news', async (req, res) => {
+router.get('/news', withAuth, async (req, res) => {
   console.log("** Getting  NEWS");
   try{
     const NewsAPI = require('newsapi');
@@ -50,28 +50,6 @@ router.get('/news', async (req, res) => {
     }
   
 })
-
-// router.get('/project/:id', async (req, res) => {
-//   try {
-//     const projectData = await Project.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-//     const project = projectData.get({ plain: true });
-
-//     res.render('project', {
-//       ...project,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -126,43 +104,6 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 
-
-// router.post('/login', async (req, res) => {
-//   try {
-//     // Example: Find user by email
-//     const userData = await User.findOne({ where: { email: req.body.email } });
-
-//     if (!userData) {
-//       res.status(400).json({ message: 'Incorrect email or password, please try again' });
-//       return;
-//     }
-
-//     // Example: Check password
-//     const validPassword = userData.checkPassword(req.body.password);
-
-//     if (!validPassword) {
-//       res.status(400).json({ message: 'Incorrect email or password, please try again' });
-//       return;
-//     }
-
-//     // If login is successful, add the user ID to the session
-//     req.session.save(() => {
-//       req.session.user_id = userData.id; // Storing user ID in session
-//       req.session.logged_in = true; // Marking the user as logged in
-
-//       // Log session data for confirmation
-//       console.log('Session Data:', req.session);
-
-//       res.json({ user: userData, message: 'You are now logged in!' });
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
-
-
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -181,13 +122,13 @@ router.get('/signup', (req, res) => {
 });
 
 
-router.get('/admin', (req, res) => {
+router.get('/admin', withAuth, (req, res) => {
 
 
   res.render('admin');
 });
 
-router.get('/search-results', (req, res) => {
+router.get('/search-results', withAuth, (req, res) => {
   const searchTerm = req.query.search;
   const userIdTerm = req.query.userId;
   console.log("Home Routes UserID"+ userIdTerm)

@@ -10,7 +10,7 @@ const Sequelize = require('sequelize');
 // Get all ratings for a user
 // http://localhost:3001/api/ratings/user/5
 
-router.get('/user/:id', async (req, res) => {
+router.get('/user/:id', withAuth, async (req, res) => {
   //TODO - Add auth
   let id = req.params.id;
   console.log("Search for ratings for user " + id);
@@ -45,7 +45,7 @@ router.get('/user/:id', async (req, res) => {
 // Get all ratings for a whiskey
 // http://localhost:3001/api/ratings/whiskey/5
 
-router.get('/whiskey/:id', async (req, res) => {
+router.get('/whiskey/:id', withAuth, async (req, res) => {
   //TODO - Add auth
   let id = req.params.id;
   console.log("Search ratings for whiskey id " + id);
@@ -80,7 +80,7 @@ router.get('/whiskey/:id', async (req, res) => {
 // Get all ratings  
 // http://localhost:3001/api/ratings/whiskey/5
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   //TODO - Add auth
   let id = req.params.id;
   console.log("Get all ratings" + id);
@@ -116,7 +116,7 @@ router.get('/', async (req, res) => {
 // http://localhost:3001/api/ratings/   (POST)
 //router.put('/', withAuth, async (req, res) => {
 // TODO. Add auth
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   // sample body
   // {
   //   "userId" : 3,
@@ -161,7 +161,7 @@ router.post('/', async (req, res) => {
 // http://localhost:3001/api/ratings/   (PUT)
 //router.put('/', withAuth, async (req, res) => {
 // TODO. Add auth
-router.put('/', async (req, res) => {
+router.put('/',withAuth, async (req, res) => {
   // sample body
   // {
   //   "id" : 3,
@@ -193,7 +193,7 @@ router.put('/', async (req, res) => {
 // http://localhost:3001/api/ratings/1 (DELETE)
 //router.delete('/:id', withAuth, async (req, res) => {
 //TODO - readd auth
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
 
   let ratingId = req.params.id;
   console.log("Deleting rating with id: " + ratingId);
