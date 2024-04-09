@@ -338,8 +338,16 @@ body {
 } 
 
 .carousel-title-color{
-    color: gray;
+    color: blue;
+    background-color: white;
+    opacity: 65%;
+    border-radius: 30px;
+
 }
+
+.carousel-inner > .carousel-item   {
+    background-color: whitesmoke;
+  } 
  .carousel-inner > .carousel-item > img {
     width:600px;
     height:400px;
