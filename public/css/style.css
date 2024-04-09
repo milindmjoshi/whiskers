@@ -357,13 +357,21 @@ body {
     margin: auto;
 }
 
-.carousel-title-color {
-    color: gray;
+
+.carousel-title-color{
+    color: blue;
+    background-color: white;
+    opacity: 65%;
+    border-radius: 30px;
+
 }
 
-.carousel-inner>.carousel-item>img {
-    width: 600px;
-    height: 400px;
+.carousel-inner > .carousel-item   {
+    background-color: whitesmoke;
+  } 
+ .carousel-inner > .carousel-item > img {
+    width:600px;
+    height:400px;
     margin: auto;
 }
 
