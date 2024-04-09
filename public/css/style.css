@@ -16,6 +16,22 @@ body {
     background-attachment: fixed;
 }
 
+@keyframes waveAnimation {
+
+    0%,
+    100% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+.waving {
+    display: inline-block;
+    animation: waveAnimation 1s ease-in-out infinite;
+}
 
 
 .navbar-brand {
@@ -52,6 +68,8 @@ body {
     font-weight: 300;
     font-size: 10em;
     font-style: normal;
+    text-shadow: 1px 1px 2px #000000;
+
 }
 
 .share-text,
@@ -65,6 +83,8 @@ body {
     font-weight: 400;
     font-size: 5em;
     color: var(--secondary-color);
+    text-shadow: 1px 1px 2px #000000;
+
 }
 
 .login-container,
@@ -332,10 +352,11 @@ body {
 }
 
 /* Ensure carousel images and items don't take up whole screen */
- .carousel-width{
+.carousel-width {
     width: 700px;
     margin: auto;
-} 
+}
+
 
 .carousel-title-color{
     color: blue;
@@ -352,11 +373,11 @@ body {
     width:600px;
     height:400px;
     margin: auto;
-  } 
+}
 
 
-  /* CSS for admin page */
-  profile-name,
+/* CSS for admin page */
+profile-name,
 .admin-title {
     font-family: "Oswald", sans-serif;
     color: var(--primary-color);
@@ -370,7 +391,7 @@ body {
     font-size: 20px;
 }
 
-.msg-width{
+.msg-width {
     width: 75%;
     margin: auto;
 
