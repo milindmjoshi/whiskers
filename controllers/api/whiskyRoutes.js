@@ -56,9 +56,7 @@ router.get('/averages', withAuth, async (req, res) => {
 
 
     res.status(200).json(whiskeyDataSummary);
-    // res.render('profile', {
-    //   whiskeyDataSummary
-    // });
+     
   }
   catch (error) {
     console.log(error);
@@ -69,7 +67,7 @@ router.get('/averages', withAuth, async (req, res) => {
 
 // Get searched whiskeys with avg rating
 router.get('/averages/search/:name', withAuth,async (req, res) => {
-  //TODO - Add auth
+   
   let whiskyName = req.params.name;
   console.log("Search for " + whiskyName);
   let whiskeyDataSummary = new Array();
@@ -97,7 +95,7 @@ router.get('/averages/search/:name', withAuth,async (req, res) => {
 
 // Get all whiskeys
 router.get('/', withAuth, async (req, res) => {
-  //TODO - Add auth
+   
   try {
     let whiskyData = await Whisky.findAll({
       // This will retrieve every Whisky's associated Rating data.  
@@ -118,7 +116,7 @@ router.get('/', withAuth, async (req, res) => {
 // http://localhost:3001/api/whiskeys/15
 
 router.get('/:id', withAuth, async (req, res) => {
-  //TODO - Add auth
+   
   let whiskeyId = req.params.id;
   console.log("Search for whiskey with id " + whiskeyId);
   try {
@@ -127,16 +125,6 @@ router.get('/:id', withAuth, async (req, res) => {
 
     if (whiskeyData) {
 
-      // first read the image and base64Encode the file IF image file name exists. Note
-      // the image blob is not stored in the database
-      // if (whiskeyData.file_name){
-      //   console.log("Base 64 encode file");
-      //   var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
-      //   whiskeyData.image = imageAsBase64;
-      //   console.log("Base 64 encoded file: " + whiskeyData.image);
-
-      // }
-      //res.status(200).json(JSON.stringify(whiskeyData));
       res.sendFile(path.join(__dirname, '../../public/assets/images/' + whiskeyData.file_name));
 
     }
@@ -148,20 +136,7 @@ router.get('/:id', withAuth, async (req, res) => {
     console.log(error);
     res.status(500).send("Error searching whikey by id");
   }
-  // switch(whisky) {
-  //   case 'chivas-12': 
-  //         res.sendFile(path.join(__dirname, '../../public/assets/images/chivas-regal-12.jpg'));
-  //         break;
-  //   case 'chivas-18':
-  //         res.sendFile(path.join(__dirname,'../../public/assets/images/chivas-regal-18.jpg'));
-  //         break;
-  //   case  'chivas-25':
-  //         res.sendFile(path.join(__dirname,'../../public/assets/images/chivas-regal-25.jpg'));
-  //         break;
-  //   default:
-  //         console.log("Whisky not found:" + whisky);
-  //         res.status(404).send('Whisky Not Found: ' + whisky);     
-  // }
+  
 
 })
 

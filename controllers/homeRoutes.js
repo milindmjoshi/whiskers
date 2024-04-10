@@ -94,7 +94,6 @@ router.get('/profile', withAuth, async (req, res) => {
       res.render('profile', {
         ...user,
         ratings,
-        // comment: whiskeyRatingsData[0].comment,
         logged_in: true
       });
     }

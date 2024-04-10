@@ -19,16 +19,7 @@ router.get('/user/:id', withAuth, async (req, res) => {
     const whiskeyRatingsData = await Rating.findAll({ where: { user_id: id } });
 
     if (whiskeyRatingsData) {
-      // For now, just return the ratings array (will need to update to add the whiskey image)
-
-      //   // first read the image and base64Encode the file IF image file name exists
-      //   if (whiskeyData.file_name){
-      //     console.log("Base 64 encode file");
-      //     var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
-      //     whiskeyData.image = imageAsBase64;
-      //     console.log("Base 64 encoded file: " + whiskeyData.image);
-
-      //   }
+       
       res.status(200).json(JSON.stringify(whiskeyRatingsData));
     }
     else {
@@ -55,16 +46,7 @@ router.get('/whiskey/:id', withAuth, async (req, res) => {
 
     if (whiskeyRatingsData) {
 
-      // For now, just return the ratings array (will need to update to add the whiskey image)
-
-      //   // first read the image and base64Encode the file IF image file name exists
-      //   if (whiskeyData.file_name){
-      //     console.log("Base 64 encode file");
-      //     var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
-      //     whiskeyData.image = imageAsBase64;
-      //     console.log("Base 64 encoded file: " + whiskeyData.image);
-
-      //   }
+       
       res.status(200).json(JSON.stringify(whiskeyRatingsData));
     }
     else {
@@ -90,16 +72,7 @@ router.get('/', withAuth, async (req, res) => {
 
     if (whiskeyRatingsData) {
 
-      // For now, just return the ratings array (will need to update to add the whiskey image)
-
-      //   // first read the image and base64Encode the file IF image file name exists
-      //   if (whiskeyData.file_name){
-      //     console.log("Base 64 encode file");
-      //     var imageAsBase64 = fs.readFileSync(path.join(__dirname,"../../public/assets/images/" + whiskeyData.file_name), 'base64');
-      //     whiskeyData.image = imageAsBase64;
-      //     console.log("Base 64 encoded file: " + whiskeyData.image);
-
-      //   }
+       
       res.status(200).json(JSON.stringify(whiskeyRatingsData));
     }
     else {
