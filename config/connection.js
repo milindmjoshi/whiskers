@@ -3,6 +3,7 @@ require('dotenv').config();
 
 let sequelize;
 
+// Connect to HeroKU JAWS DB if defined else localhost
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
