@@ -158,6 +158,17 @@ input[type="password"] {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    width: 75%;
+}
+
+@media (max-width: 900px) {
+    .my-search-results-container  {
+        width: auto;
+    }
+}
+
+.search-results-card {
+    width: 50%;
 }
 
 /* .search-results-card {
@@ -314,6 +325,7 @@ body {
 }
 
 .no-search-results {
+    text-align: center;
     font-size: 4em;
 }
 
