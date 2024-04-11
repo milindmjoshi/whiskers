@@ -1,4 +1,4 @@
- 
+
 // get whiskey for profile page
 async function getProfileWhiskeys() {
     console.log("Fetching whiskeys ratings for user ID:", userId);
@@ -35,6 +35,9 @@ async function getFeedWhiskeys() {
 
             // Clear existing content
             whiskeyFeedContainer.innerHTML = '';
+
+            // Sort whiskeyDataSummary by avgRating in descending order
+            whiskeyDataSummary.sort((a, b) => b.avgRating - a.avgRating);
 
             // Iterate over the whiskey data and create HTML for each
             whiskeyDataSummary.forEach(whiskey => {
@@ -188,7 +191,7 @@ async function removeRating(ratingId) {
     // Display confirmation dialog
     //const isConfirmed = confirm("Are you sure you want to delete this rating?");
     const isConfirmed = true;
-    
+
     if (isConfirmed) {
         try {
             const response = await fetch(`/api/ratings/${ratingId}`, {
