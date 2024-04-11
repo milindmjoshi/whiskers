@@ -2,7 +2,7 @@
     {
         "name": "admin",
         "email": "admin@whiskers.com",
-        "password": "password",
+        "password": "pass1234",
         "security_question": "What was your childhood pets name",
         "security_answer": "bingo"
     }
