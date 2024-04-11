@@ -44,6 +44,9 @@ async function handleWhiskySearch() {
                 // Clear existing content
                 whiskeyFeedContainer.innerHTML = '';
 
+                // Sort whiskeyDataSummary by avgRating in descending order
+                whiskeyDataSummary.sort((a, b) => b.avgRating - a.avgRating);
+
                 // Iterate over the whiskey data and create HTML for each
                 whiskeyDataSummary.forEach(whiskey => {
                     const whiskeyElement = document.createElement('div');
